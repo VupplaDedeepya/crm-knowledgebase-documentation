@@ -1,0 +1,351 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;1,300&family=DM+Sans:wght@400;500&display=swap');
+
+.quickAccessSection {
+  padding: 2.5rem 0 3rem 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.quickAccessHeading {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 1.7rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* dark theme: lighter heading */
+html[data-theme="dark"] .quickAccessHeading {
+  color: #F0F0F0;
+}
+
+.quickAccessSubtitle {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 1.5rem;
+}
+
+/* dark theme: lighter subtitle */
+html[data-theme="dark"] .quickAccessSubtitle {
+  color: #C0C0C0;
+}
+
+.quickCardColumn {
+  margin-bottom: 1rem;
+  display: flex;
+  padding: 0 0.6rem;
+  box-sizing: border-box;
+  flex: 0 0 25%;
+}
+
+.quickCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 18px 16px;
+  background: var(--ifm-card-background-color, #ffffff);
+  border-radius: 12px;
+  border: 0.5px solid rgba(148, 163, 184, 0.35);
+  box-shadow: none;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  gap: 12px;
+}
+
+/* dark theme: lighter border for card */
+html[data-theme="dark"] .quickCard {
+  border-color: rgba(210, 210, 210, 0.2);
+}
+
+/* colored top accent bar per card index */
+.quickCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.quickCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(148, 163, 184, 0.6);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* dark theme: lighter border on hover */
+html[data-theme="dark"] .quickCard:hover {
+  border-color: rgba(210, 210, 210, 0.4);
+}
+
+.quickCard:hover::before {
+  opacity: 1;
+}
+
+/* per-card accent colors — applied via cardColor0..3 on the wrapper */
+.cardColor0::before { background: #7F77DD; }
+.cardColor1::before { background: #1D9E75; }
+.cardColor2::before { background: #378ADD; }
+.cardColor3::before { background: #D85A30; }
+
+/* icon box */
+.iconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconBox img {
+  width: 22px;
+  height: 22px;
+}
+
+/* dark theme: brighten icon images for better visibility */
+html[data-theme="dark"] .iconBox img {
+  filter: brightness(1.1);
+}
+
+.cardColor0 .iconBox { background: #EEEDFE; }
+.cardColor1 .iconBox { background: #E1F5EE; }
+.cardColor2 .iconBox { background: #E6F1FB; }
+.cardColor3 .iconBox { background: #FAECE7; }
+
+/* dark theme icon box colors */
+html[data-theme="dark"] .cardColor0 .iconBox { background: rgba(127, 119, 221, 0.2); }
+html[data-theme="dark"] .cardColor1 .iconBox { background: rgba(29, 158, 117, 0.2); }
+html[data-theme="dark"] .cardColor2 .iconBox { background: rgba(55, 138, 221, 0.2); }
+html[data-theme="dark"] .cardColor3 .iconBox { background: rgba(216, 90, 48, 0.2); }
+
+/* card body */
+.cardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardTitle {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: -0.2px;
+  margin: 0;
+  color: var(--ifm-font-color-base);
+}
+
+/* dark theme: lighter text for card title */
+html[data-theme="dark"] .cardTitle {
+  color: #F0F0F0;
+}
+
+.cardDescription {
+  font-size: 0.84rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* dark theme: lighter text for card description */
+html[data-theme="dark"] .cardDescription {
+  color: #D0D0D0;
+}
+
+/* progress pip row */
+.cardSteps {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.cardStep {
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(148, 163, 184, 0.3);
+  transition: background 0.2s ease;
+}
+
+/* active pips per color */
+.cardColor0 .quickCard:hover .cardStep.active,
+.cardColor0:hover .cardStep.active { background: #7F77DD; }
+.cardColor0:hover .cardStep.soft   { background: #AFA9EC; }
+
+.cardColor1:hover .cardStep.active { background: #1D9E75; }
+.cardColor1:hover .cardStep.soft   { background: #5DCAA5; }
+
+.cardColor2:hover .cardStep.active { background: #378ADD; }
+.cardColor2:hover .cardStep.soft   { background: #85B7EB; }
+
+.cardColor3:hover .cardStep.active { background: #D85A30; }
+.cardColor3:hover .cardStep.soft   { background: #F0997B; }
+
+/* footer row */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 0.5px solid rgba(148, 163, 184, 0.3);
+  margin-top: auto;
+}
+
+/* dark theme: lighter border and text for footer */
+html[data-theme="dark"] .cardFooter {
+  border-top-color: rgba(210, 210, 210, 0.2);
+}
+
+.cardTag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+}
+
+.cardColor0 .cardTag { background: #EEEDFE; color: #3C3489; }
+.cardColor1 .cardTag { background: #E1F5EE; color: #085041; }
+.cardColor2 .cardTag { background: #E6F1FB; color: #0C447C; }
+.cardColor3 .cardTag { background: #FAECE7; color: #712B13; }
+
+/* dark theme: adjust tag styling */
+html[data-theme="dark"] .cardColor0 .cardTag { background: rgba(127, 119, 221, 0.25); color: #D4CCFF; }
+html[data-theme="dark"] .cardColor1 .cardTag { background: rgba(29, 158, 117, 0.25); color: #4FD9A5; }
+html[data-theme="dark"] .cardColor2 .cardTag { background: rgba(55, 138, 221, 0.25); color: #7FC1FF; }
+html[data-theme="dark"] .cardColor3 .cardTag { background: rgba(216, 90, 48, 0.25); color: #FF9E6F; }
+
+.cardArrow {
+  font-size: 0.85rem;
+  color: rgba(148, 163, 184, 0.8);
+}
+
+/* dark theme: lighter arrow color */
+html[data-theme="dark"] .cardArrow {
+  color: rgba(210, 210, 210, 0.8);
+}
+
+.quickCard:hover .cardArrow {
+  color: var(--ifm-color-emphasis-700);
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
+/* responsive */
+@media (max-width: 991px) {
+  .quickCardColumn {
+    flex: 0 0 50%;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quickAccessSection {
+    padding: 2rem 0;
+  }
+  .quickCard {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .quickCardColumn {
+    flex: 0 0 100%;
+    padding: 0 0.25rem;
+  }
+}
+
+.cardText {
+  flex: 1;
+  text-align: left;
+}
+
+.cardTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.cardDescription {
+  margin: 0;
+  color: rgba(15, 23, 42, 0.72);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.cardFooter {
+  margin-top: auto;
+  align-self: flex-start;
+  padding-bottom: 0.25rem;
+}
+
+.cardFooterLink {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease, text-decoration 160ms ease;
+  display: inline-block;
+}
+
+.cardFooterLink:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+  .quickCardColumn {
+    flex: 0 0 50%;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .quickCardColumn {
+    flex: 0 0 100%;
+    padding: 0 0.25rem;
+  }
+  .quickCard {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .quickAccessSection {
+    padding: 2rem 0;
+  }
+
+  .quickCard {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .cardTop {
+    flex-direction: row;
+  }
+
+  .iconBox {
+    min-width: 64px;
+    min-height: 64px;
+  }
+}
