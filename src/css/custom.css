@@ -13,6 +13,11 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
+  --brand-accent: #7c40dd;
+  --brand-accent-alt: #e12da1;
+  --brand-accent-bg: rgba(124, 64, 221, 0.12);
+  --ifm-breadcrumb-color-active: #7c40dd;
+  --ifm-breadcrumb-item-background-active: rgba(124, 64, 221, 0.12);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
@@ -53,185 +58,104 @@
 .menu {
   width: 250px !important;
 }
+
+/* Sidebar headings are black by default and accent on hover */
+.theme-doc-sidebar-container .menu__link,
+.theme-doc-sidebar-container .menu__heading,
+.theme-doc-sidebar-container .menu__list-item > a {
+  color: #000 !important;
+}
+
+.theme-doc-sidebar-container .menu__link:hover,
+.theme-doc-sidebar-container .menu__heading:hover,
+.theme-doc-sidebar-container .menu__list-item > a:hover {
+  color: var(--brand-accent) !important;
+}
+
+.theme-doc-sidebar-container .menu__link--active,
+.theme-doc-sidebar-container .menu__list-item--active > .menu__link,
+.theme-doc-sidebar-container .menu__list-item--active > a,
+.theme-doc-sidebar-container .menu__list-item--active .menu__link {
+  color: var(--brand-accent) !important;
+  font-weight: 600;
+  background: #f4f5f7 !important;
+  border-radius: 0.35rem;
+  box-shadow: none !important;
+}
+
+.theme-doc-sidebar-container .menu__heading--active,
+.theme-doc-sidebar-container .menu__heading--active a,
+.theme-doc-sidebar-container .menu__heading--active .menu__link {
+  color: #000 !important;
+  background: transparent !important;
+}
+
 .hash-link {
   display: none !important;
 }
 
-/* Dropdown hover menus */
-.navbar__item--dropdown > .navbar__items {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  flex-direction: column;
-  min-width: 220px;
-  background: var(--ifm-navbar-background-color);
-  border-radius: 16px;
-  padding: 0.4rem 0;
-  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.16);
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  transform: translateY(12px);
-  z-index: 20;
+/* Highlight the active navbar item with a bottom border */
+.navbar__item--active .navbar__link,
+.navbar__link--active {
+  border-bottom: 3px solid var(--brand-accent);
+  padding-bottom: 0.3rem;
+  color: var(--brand-accent);
+  background: transparent !important;
+  border-radius: 0;
 }
 
-.navbar__item--dropdown:hover > .navbar__items,
-.navbar__item--dropdown:focus-within > .navbar__items {
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
+/* Keep the active state clean with only the underline */
+.navbar__item--active .navbar__link {
+  background: transparent !important;
 }
 
-.navbar__item--dropdown .navbar__items .navbar__item--dropdown {
-  position: relative;
-}
-
-.navbar__item--dropdown .navbar__items .navbar__item--dropdown > .navbar__items {
-  left: 100%;
-  top: 0;
-  margin-left: 0.25rem;
-}
-
-.navbar__item--dropdown .navbar__link::after {
-  content: '▾';
-  display: inline-block;
-  margin-left: 0.4rem;
-  font-size: 0.72rem;
-  transition: transform 0.2s ease;
-}
-
-.navbar__item--dropdown:hover > .navbar__link::after,
-.navbar__item--dropdown:focus-within > .navbar__link::after {
-  transform: rotate(180deg);
-}
-
-.navbar__item--dropdown .navbar__items .navbar__link {
-  padding: 0.75rem 1rem;
-  white-space: nowrap;
-}
-
-.navbar__item--dropdown .navbar__items .navbar__link:hover {
-  background: rgba(124, 64, 221, 0.08);
-}
-
-.navbar__item--dropdown .navbar__items .navbar__item--dropdown:hover > .navbar__link::after {
-  transform: rotate(90deg);
-}
-
-/* Modern navbar styling */
-.navbar {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(16px);
-  padding-left: 0; /* align navbar to left edge */
-}
-
-[data-theme='dark'] .navbar {
-  background: rgba(10, 14, 22, 0.94);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.navbar__inner {
-
-
-
-  
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0.75rem 1.5rem 0.75rem 1rem; /* 2rem left padding */
-  gap: 0rem;
-  display: flex;
-  align-items: center;
-}
-
-/* Make brand/logo flush with the viewport edge */
-.navbar__brand {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.navbar__brand {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.navbar__logo img {
-  max-height: 40px;
-}
-
-.navbar__title {
-  font-weight: 700;
-  letter-spacing: -0.4px;
-}
-
-.navbar__items {
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.navbar__item .navbar__link {
-  font-weight: 500;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
+/* Navbar hover effect aligned with the logo/banner colors */
 .navbar__item .navbar__link:hover,
-.navbar__item .navbar__link:focus-visible {
-  background: rgba(47, 79, 79, 0.08);
-  color: var(--ifm-color-primary);
+.navbar__item .navbar__link:focus-visible,
+.navbar__link:hover,
+.navbar__link:focus-visible,
+.navbar__title:hover,
+.navbar__brand:hover .navbar__title,
+.navbar__brand a:hover .navbar__title {
+  background: transparent !important;
+  color: var(--brand-accent) !important;
   transform: translateY(-1px);
 }
 
-[data-theme='dark'] .navbar__item .navbar__link:hover,
-[data-theme='dark'] .navbar__item .navbar__link:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+/* Breadcrumb active page text uses the logo accent color */
+.theme-doc-breadcrumbs .breadcrumbs__item--active .breadcrumbs__link,
+.breadcrumbs__item--active .breadcrumbs__link,
+.breadcrumbs__link[aria-current="page"],
+.breadcrumbs__link--active,
+.breadcrumbs__link.active,
+.table-of-contents__link--active,
+.table-of-contents__link.toc-highlight[aria-current="page"],
+.table-of-contents__link.toc-highlight.active,
+.table-of-contents__link.toc-highlight:hover,
+.table-of-contents__link.toc-highlight:focus,
+.table-of-contents__link.toc-highlight:focus-visible,
+.table-of-contents__link:hover {
+  color: var(--brand-accent) !important;
 }
 
-.navbar__item--active .navbar__link,
-.navbar__link--active {
-  background: rgba(124, 64, 221, 0.12);
-  color: var(--ifm-color-primary);
+/* Ensure TOC hover/focus states align with brand accent background when needed */
+.table-of-contents__link.toc-highlight:hover,
+.table-of-contents__link.toc-highlight:focus-visible {
+  background: transparent !important;
 }
 
-[data-theme='dark'] .navbar__item--active .navbar__link,
-[data-theme='dark'] .navbar__link--active {
-  background: rgba(157, 109, 245, 0.16);
-  color: #d8befe;
+/* Scope the primary color inside the desktop TOC to the brand accent so
+   any internal rules using --ifm-color-primary inherit the accent. */
+.theme-doc-toc-desktop {
+  --ifm-color-primary: var(--brand-accent) !important;
+  --ifm-link-color: var(--brand-accent) !important;
 }
 
-.navbar__item--right {
-  align-items: center;
-}
-
-.navbar__search {
-  min-width: 220px;
-}
-
-.navbar__search .navbar__search-input {
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.05);
-}
-
-[data-theme='dark'] .navbar__search .navbar__search-input {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.navbar__toggle {
-  border-radius: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-}
-
-[data-theme='dark'] .navbar__toggle {
-  border-color: rgba(255, 255, 255, 0.14);
-}
-
-.navbar__items--right {
-  gap: 0.9rem;
-  margin-left: auto; /* push system mode items to the right */
+/* Extra-specific hover/focus overrides scoped to the TOC container */
+.theme-doc-toc-desktop .table-of-contents__link.toc-highlight:hover,
+.theme-doc-toc-desktop .table-of-contents__link.toc-highlight:focus,
+.theme-doc-toc-desktop .table-of-contents__link:hover,
+.theme-doc-toc-desktop .table-of-contents__link:focus {
+  color: var(--brand-accent) !important;
+  background: transparent !important;
 }
