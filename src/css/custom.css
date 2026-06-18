@@ -6,13 +6,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: var(--brand-accent);
+  --ifm-color-primary-dark: #6f2fbf;
+  --ifm-color-primary-darker: #6329a8;
+  --ifm-color-primary-darkest: #562191;
+  --ifm-color-primary-light: #8b53e0;
+  --ifm-color-primary-lighter: #9a6eed;
+  --ifm-color-primary-lightest: #b594f5;
   --brand-accent: #7c40dd;
   --brand-accent-alt: #e12da1;
   --brand-accent-bg: rgba(124, 64, 221, 0.12);
@@ -130,32 +130,89 @@
 .breadcrumbs__link.active,
 .table-of-contents__link--active,
 .table-of-contents__link.toc-highlight[aria-current="page"],
-.table-of-contents__link.toc-highlight.active,
-.table-of-contents__link.toc-highlight:hover,
-.table-of-contents__link.toc-highlight:focus,
-.table-of-contents__link.toc-highlight:focus-visible,
-.table-of-contents__link:hover {
+.table-of-contents__link.toc-highlight.active {
   color: var(--brand-accent) !important;
 }
 
-/* Ensure TOC hover/focus states align with brand accent background when needed */
-.table-of-contents__link.toc-highlight:hover,
-.table-of-contents__link.toc-highlight:focus-visible {
-  background: transparent !important;
+/* Right-side TOC base link color stays default, active item gets accent */
+.table-of-contents__link,
+.table-of-contents a,
+.table-of-contents li a {
+  color: #1c1c1c !important;
 }
-
-/* Scope the primary color inside the desktop TOC to the brand accent so
-   any internal rules using --ifm-color-primary inherit the accent. */
-.theme-doc-toc-desktop {
-  --ifm-color-primary: var(--brand-accent) !important;
-  --ifm-link-color: var(--brand-accent) !important;
-}
-
-/* Extra-specific hover/focus overrides scoped to the TOC container */
-.theme-doc-toc-desktop .table-of-contents__link.toc-highlight:hover,
-.theme-doc-toc-desktop .table-of-contents__link.toc-highlight:focus,
-.theme-doc-toc-desktop .table-of-contents__link:hover,
-.theme-doc-toc-desktop .table-of-contents__link:focus {
+.table-of-contents__link:hover,
+.table-of-contents__link:focus,
+.table-of-contents__link:focus-visible,
+.table-of-contents a:hover,
+.table-of-contents a:focus,
+.table-of-contents a:focus-visible {
   color: var(--brand-accent) !important;
+  text-decoration: none !important;
+}
+
+.table-of-contents .table-of-contents__link--active,
+.table-of-contents .table-of-contents__link--active.toc-highlight,
+.theme-doc__toc .table-of-contents__link--active,
+.theme-doc__toc .table-of-contents__link--active.toc-highlight {
+  color: var(--brand-accent) !important;
+  font-weight: 600 !important;
   background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Docs pagination alignment and brand color */
+.pagination-nav {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem !important;
+  align-items: stretch;
+}
+.pagination-nav__link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 0.75rem 1rem !important;
+  min-height: 3.2rem !important;
+  font-size: 0.95rem !important;
+  color: var(--brand-accent) !important;
+  border: 1px solid rgba(124, 64, 221, 0.2) !important;
+  background: rgba(124, 64, 221, 0.08) !important;
+  border-radius: 0.75rem !important;
+  text-decoration: none !important;
+}
+.pagination-nav__link:hover,
+.pagination-nav__link:focus-visible {
+  color: var(--brand-accent) !important;
+  background: rgba(124, 64, 221, 0.14) !important;
+  border-color: rgba(124, 64, 221, 0.35) !important;
+}
+.pagination-nav__link--prev {
+  align-items: flex-start !important;
+}
+.pagination-nav__link--next {
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+.pagination-nav__label,
+.pagination-nav__sublabel {
+  color: var(--brand-accent) !important;
+}
+.pagination-nav__label {
+  order: 1 !important;
+  margin: 0 0 0.4rem 0 !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+.pagination-nav__sublabel {
+  order: 2 !important;
+  font-size: 0.85rem !important;
+  opacity: 0.95 !important;
+  margin: 0 !important;
+}
+.pagination-nav__link--prev .pagination-nav__sublabel::before {
+  content: "← " !important;
+}
+.pagination-nav__link--next .pagination-nav__sublabel::after {
+  content: " →" !important;
 }

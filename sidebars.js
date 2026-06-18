@@ -30,6 +30,15 @@ const sidebars = {
             'user-management/Access',
           ],
         },
+        {
+          type: 'category',
+          label: 'Configure',
+          items: [
+            'Configure/Custom-Fields',
+            'Configure/Leads',
+            'Configure/Deals',
+          ],
+        },
       ],
     },
   ]
