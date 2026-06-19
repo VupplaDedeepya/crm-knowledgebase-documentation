@@ -44,6 +44,15 @@
   font-weight: 500;
   line-height: 1.2;
 }
+.markdown {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.markdown p,
+.markdown li,
+.markdown td {
+  font-size: 1.1rem;
+}
 .hero--primary {
   background: linear-gradient(135deg, rgba(124, 64, 221, 0.75), rgba(225, 45, 165, 0.75));
   color: white;
