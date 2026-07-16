@@ -70,7 +70,7 @@ This opens the **Quote Creation Options** window.
 
 The CRM provides multiple methods for quote management.
 
-![Quote Options](/img/Deals/QuoteOptions.png)
+![Quote Options](/img/deals/QuoteOptions.png)
 
 ---
 

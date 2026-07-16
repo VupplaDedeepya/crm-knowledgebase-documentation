@@ -21,7 +21,7 @@ Meetings can also be synchronized with supported calendar providers, ensuring sc
 
 This opens the **Meeting Scheduling** form.
 
-![Create Meeting](/img/Deals/DealCreateMeeting.png)
+![Create Meeting](/img/deals/DealCreateMeeting.png)
 
 ---
 

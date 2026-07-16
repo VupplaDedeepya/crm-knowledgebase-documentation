@@ -55,7 +55,7 @@ Notes help users track discussions, customer requirements, follow-ups, and impor
 
 This opens the **Note Editor** window.
 
-![Create Note](/img/Leads/CreateNote.png)
+![Create Note](/img/leads/CreateNote.png)
 
 ---
 

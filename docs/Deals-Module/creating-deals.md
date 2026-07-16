@@ -21,7 +21,7 @@ Deals help sales teams track potential revenue, manage pipeline stages, and moni
 
 This opens the **Deal Creation** form.
 
-![Create Deal](/img/Deals/CreateDeal.png)
+![Create Deal](/img/deals/CreateDeal.png)
 
 ---
 

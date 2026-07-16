@@ -41,7 +41,7 @@ Each nudge includes:
 - Recommendation Description
 - Priority Level
 
-![Smart Nudges](/img/Leads/SmartNudges.png)
+![Smart Nudges](/img/leads/SmartNudges.png)
 
 ---
 

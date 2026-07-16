@@ -38,7 +38,7 @@ const quickAccessItems = [
   {
     title: 'Lead module',
     tag: 'Leads',
-    to: '/docs/lead-module',
+    to: '/docs/Leads-Module/overview',
     description: 'Manage leads and track every pipeline stage.',
     icon: UserRoundPlus,
     pips: ['active', 'soft', 'active', 'soft'],

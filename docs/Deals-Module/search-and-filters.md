@@ -43,7 +43,7 @@ The Deal Status filter helps users organize Deals based on their current status.
 
 This helps users quickly identify active or closed opportunities.
 
-![Deal Status Filter](/img/Deals/DealStatusFilter.png)
+![Deal Status Filter](/img/deals/DealStatusFilter.png)
 
 ---
 
@@ -51,7 +51,7 @@ This helps users quickly identify active or closed opportunities.
 
 The Close Date filter allows users to filter Deals based on expected closure timelines. This helps teams prioritize Deals nearing closure.
 
-![Close Date Filter](/img/Deals/CloseDateFilter.png)
+![Close Date Filter](/img/deals/CloseDateFilter.png)
 
 ---
 
@@ -59,7 +59,7 @@ The Close Date filter allows users to filter Deals based on expected closure tim
 
 The Created Date filter helps users identify Deals created during a specific time period.
 
-![Created Date Filter](/img/Deals/CreateDateFilter.png)
+![Created Date Filter](/img/deals/CreateDateFilter.png)
 
 ---
 
@@ -67,7 +67,7 @@ The Created Date filter helps users identify Deals created during a specific tim
 
 The Deals Module also provides an **Advanced Filter** option for applying multiple filter conditions simultaneously. This helps users create highly specific Deal searches.
 
-![Advanced Filters](/img/Deals/AdvancedFilters.png)
+![Advanced Filters](/img/deals/AdvancedFilters.png)
 
 
 ---

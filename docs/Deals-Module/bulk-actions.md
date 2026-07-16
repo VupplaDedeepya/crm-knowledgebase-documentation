@@ -17,7 +17,7 @@ The **Bulk Actions** feature in the Deals module allows users to perform operati
 3. Once records are selected, the **Bulk Actions** toolbar appears at the bottom of the page.
 4. Choose the required action to apply to all selected Deals.
 
-![Bulk Actions](/img/Deals/BulkActions.png)
+![Bulk Actions](/img/deals/BulkActions.png)
 
 ---
 

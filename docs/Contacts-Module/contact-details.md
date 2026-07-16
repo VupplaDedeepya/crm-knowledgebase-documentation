@@ -28,7 +28,7 @@ The left panel displays the Contact's profile information and key details, inclu
 
 This information is displayed according to the fields configured by the administrator for the organization.
 
-![Contact Overview](/img/Contacts/ContactOverview.png)
+![Contact Overview](/img/contacts/ContactOverview.png)
 
 ---
 

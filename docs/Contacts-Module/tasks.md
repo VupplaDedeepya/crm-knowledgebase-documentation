@@ -27,7 +27,7 @@ Tasks can be created from:
 
 The task is automatically associated with the selected Contact.
 
-![Create Task](/img/Contacts/ContactsCreateTask.png)
+![Create Task](/img/contacts/ContactsCreateTask.png)
 
 ---
 

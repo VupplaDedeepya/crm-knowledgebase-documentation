@@ -22,7 +22,7 @@ All email communication is automatically recorded within the lead activity timel
 
 This opens the **Email Composer** window.
 
-![Compose Email](/img/Leads/ComposeEmail.png)
+![Compose Email](/img/leads/ComposeEmail.png)
 
 ---
 

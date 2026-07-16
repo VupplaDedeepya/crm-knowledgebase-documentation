@@ -63,7 +63,7 @@ Once the lead is marked as **Qualified**:
 - The Deal Creation popup automatically appears.
 - Lead information is pre-filled into the deal form.
 
-![Lead Conversion](/img/Leads/LeadConversion.png)
+![Lead Conversion](/img/leads/LeadConversion.png)
 
 ---
 

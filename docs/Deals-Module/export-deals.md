@@ -21,7 +21,7 @@ Users can export all Deals, filtered Deals, or selected Deal records based on th
 5. Click **Export** to generate the file.
 6. Download the exported file.
 
-![Export Deals](/img/Deals/ExportDeals.png)
+![Export Deals](/img/deals/ExportDeals.png)
 
 ---
 

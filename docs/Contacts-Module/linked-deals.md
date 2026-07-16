@@ -16,7 +16,7 @@ A Contact can be associated with multiple Deals throughout the customer lifecycl
 
 The tab displays all Deals linked to the Contact, regardless of their current status, allowing users to maintain complete visibility into the Contact's sales journey.
 
-![Linked Deals](/img/Contacts/LinkedDeals.png)
+![Linked Deals](/img/contacts/LinkedDeals.png)
 
 ---
 

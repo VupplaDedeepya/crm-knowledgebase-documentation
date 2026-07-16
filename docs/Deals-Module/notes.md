@@ -21,7 +21,7 @@ Notes help sales teams maintain a complete history of customer interactions, mak
 
 This opens the **Note Editor**.
 
-![Create Note](/img/Deals/DealCreateNote.png)
+![Create Note](/img/deals/DealCreateNote.png)
 
 ---
 

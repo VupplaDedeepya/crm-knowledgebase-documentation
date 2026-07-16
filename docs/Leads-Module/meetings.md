@@ -60,7 +60,7 @@ The Meetings section provides the following actions:
 
 This opens the **Meeting Scheduling** flow.
 
-![Create Meeting](/img/Leads/CreateMeeting.png)
+![Create Meeting](/img/leads/CreateMeeting.png)
 
 ---
 
@@ -179,7 +179,7 @@ Logged meetings are automatically added to:
 
 This opens the **Log Meeting** form in a modal or side panel.
 
-![Log Meeting](/img/Leads/LogMeeting.png)
+![Log Meeting](/img/leads/LogMeeting.png)
 
 ---
 

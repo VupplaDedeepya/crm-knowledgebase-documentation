@@ -66,7 +66,7 @@ This feature allows users to restrict the search to a specific Contact field.
 >
 > This flexibility allows users to quickly locate information regardless of the size of the Contact database.
 
-![Contact Search](/img/Contacts/SearchContacts.png)
+![Contact Search](/img/contacts/SearchContacts.png)
 
 ---
 
@@ -148,7 +148,7 @@ Users can combine multiple conditions to create sophisticated customer segments 
 
 The Contact list immediately updates to display matching records.
 
-![Advanced Filters](/img/Contacts/ContactsAdvFilters.png)
+![Advanced Filters](/img/contacts/ContactsAdvFilters.png)
 
 ---
 

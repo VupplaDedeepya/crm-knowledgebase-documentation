@@ -63,7 +63,7 @@ Proposals can be accessed from the **Deal Details** page under the **Proposals**
 
 This opens the **Proposal Creation Options** window.
 
-![Proposal Options](/img/Deals/CreateProposal.png)
+![Proposal Options](/img/deals/CreateProposal.png)
 
 ---
 

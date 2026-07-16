@@ -25,7 +25,7 @@ Tasks help sales teams stay organized and ensure timely actions throughout the l
 
 This opens the **Task Creation** form.
 
-![Create Task](/img/Leads/CreateTask.png)
+![Create Task](/img/leads/CreateTask.png)
 
 ---
 

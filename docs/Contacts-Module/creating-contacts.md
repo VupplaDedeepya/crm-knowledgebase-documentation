@@ -37,7 +37,7 @@ The **Contacts** module serves as the primary location for managing customer rec
 
 This method is typically used when users need to add customer information directly into the CRM.
 
-![Create Contact from Contacts Module](/img/Contacts/CreateContact.png)
+![Create Contact from Contacts Module](/img/contacts/CreateContact.png)
 
 ---
 
@@ -56,7 +56,7 @@ Users can create a Contact directly from a **Lead Detail** page when the Lead re
 
 The newly created Contact can then be associated with future Deals, Organizations, and customer interactions.
 
-![Create Contact from Lead](/img/Contacts/CreateContactFromLead.png)
+![Create Contact from Lead](/img/contacts/CreateContactFromLead.png)
 
 ---
 
@@ -96,7 +96,7 @@ The Contact is automatically linked to the selected Organization.
 
 This approach is useful when adding decision-makers, stakeholders, or employees associated with a company.
 
-![Create Contact from Organization](/img/Contacts/CreateContactFromOrganization.png)
+![Create Contact from Organization](/img/contacts/CreateContactFromOrganization.png)
 
 ---
 

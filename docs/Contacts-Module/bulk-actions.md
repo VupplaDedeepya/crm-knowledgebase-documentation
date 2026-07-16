@@ -19,7 +19,7 @@ To access **Bulk Actions**:
 3. The **Bulk Actions** toolbar appears at the bottom of the screen.
 4. Choose the desired action.
 
-![Bulk Actions](/img/Contacts/ContactBulkActions.png)
+![Bulk Actions](/img/contacts/ContactBulkActions.png)
 
 ---
 

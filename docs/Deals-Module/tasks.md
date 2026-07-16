@@ -73,7 +73,7 @@ Users can:
 
 This opens the **Task Creation** form.
 
-![Create Task](/img/Deals/DealCreateTask.png)
+![Create Task](/img/deals/DealCreateTask.png)
 
 ---
 

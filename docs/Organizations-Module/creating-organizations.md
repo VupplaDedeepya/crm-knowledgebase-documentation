@@ -38,7 +38,7 @@ The **Organizations** module is the primary location for managing company and bu
 
 This method is typically used when users need to create a new business account directly within the CRM.
 
-![Create Organization](/img/Organizations/CreateOrganization.png)
+![Create Organization](/img/organizations/CreateOrganization.png)
 
 ---
 

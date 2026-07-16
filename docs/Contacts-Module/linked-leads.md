@@ -18,7 +18,7 @@ When a Lead is converted, the relationship between the Lead and the Contact is p
 
 The **Linked Leads** tab serves as a historical record of these relationships.
 
-![Linked Leads](/img/Contacts/LinkedLeads.png)
+![Linked Leads](/img/contacts/LinkedLeads.png)
 
 ---
 

@@ -77,7 +77,7 @@ As the opportunity progresses, users can update the Deal stage to reflect the la
 3. Click **Move the Stage**.
 4. Select the desired stage from the available list.
 
-![Deal Stages](/img/Deals/DealStages.png)
+![Deal Stages](/img/deals/DealStages.png)
 
 The Deal is automatically updated within the pipeline.
 

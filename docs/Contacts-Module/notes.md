@@ -21,7 +21,7 @@ Notes help maintain a complete history of customer interactions, making it easie
 
 This opens the **Note Editor**.
 
-![Create Note](/img/Contacts/ContactsCreateNote.png)
+![Create Note](/img/contacts/ContactsCreateNote.png)
 
 ---
 
