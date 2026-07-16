@@ -26,7 +26,7 @@ The workflow builder helps organizations:
 
 ---
 
-![Conversation-Flow](/img/PulseSettings/conversationFLow.png)
+![Conversation-Flow](/img/PulseSettings/conversationFlow.png)
 
 ## Workflow Components
 
