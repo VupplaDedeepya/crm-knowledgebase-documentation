@@ -18,8 +18,16 @@
   --brand-accent-bg: rgba(124, 64, 221, 0.12);
   --ifm-breadcrumb-color-active: #7c40dd;
   --ifm-breadcrumb-item-background-active: rgba(124, 64, 221, 0.12);
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 92%;
+  --ifm-font-size-base: 0.92rem;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  font-size: 0.92rem;
+}
+body {
+  font-size: 0.92rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -35,23 +43,23 @@
 }
 
 .markdown h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.2;
 }
 .markdown h2 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 500;
   line-height: 1.2;
 }
 .markdown {
-  font-size: 1.1rem;
+  font-size: 0.98rem;
   line-height: 1.6;
 }
 .markdown p,
 .markdown li,
 .markdown td {
-  font-size: 1.1rem;
+  font-size: 0.98rem;
 }
 .hero--primary {
   background: linear-gradient(135deg, rgba(124, 64, 221, 0.75), rgba(225, 45, 165, 0.75));
@@ -62,10 +70,10 @@
 }
 /* Reduce sidebar width */
 .theme-doc-sidebar-container {
-  width: 250px !important;
+  width: 220px !important;
 }
 .menu {
-  width: 250px !important;
+  width: 220px !important;
 }
 
 /* Sidebar headings are black by default and accent on hover */
