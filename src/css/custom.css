@@ -177,6 +177,16 @@ body {
   border-radius: 0 !important;
 }
 
+/* Reduce right-side TOC/sidebar width */
+.theme-doc__toc,
+.theme-doc-sidebar-secondary,
+.theme-doc-sidebar-secondary .table-of-contents,
+.theme-doc__toc .table-of-contents {
+  max-width: 220px !important;
+  width: 220px !important;
+  flex: 0 0 220px !important;
+}
+
 /* Docs pagination alignment and brand color */
 .pagination-nav {
   display: grid !important;
