@@ -5,7 +5,7 @@ const sidebars = {
       type: 'category',
       label: 'CRM Modules',
       items: [
-        'lead-module',
+        'leads-module',
         'deal-module',
       ],
     },
@@ -14,6 +14,106 @@ const sidebars = {
   onboardingSidebar: [
     'onboarding',
     'profile-settings'
+  ],
+  leadModuleSidebar: [
+    {
+      type: 'category',
+      label: 'Leads Module',
+      items: [
+        'Leads-Module/overview',
+        'Leads-Module/creating-leads',
+        'Leads-Module/bulk-actions',
+        'Leads-Module/custom-views',
+        'Leads-Module/search-and-filters',
+        {
+          type: 'category',
+          label: 'Lead Activities',
+          items: [
+            'Leads-Module/notes',
+            'Leads-Module/tasks',
+            'Leads-Module/meetings',
+            'Leads-Module/emails',
+          ],
+        },
+        'Leads-Module/smart-nudges',
+        'Leads-Module/lead-conversion',
+        'Leads-Module/export-leads',
+      ],
+    },
+  ],
+  dealModuleSidebar: [
+    {
+      type: 'category',
+      label: 'Deals Module',
+      items: [
+        'Deals-Module/overview',
+        'Deals-Module/creating-deals',
+        'Deals-Module/bulk-actions',
+        'Deals-Module/custom-views',
+        'Deals-Module/search-and-filters',
+        'Deals-Module/export-deals',
+        'Deals-Module/deal-details',
+        'Deals-Module/deal-score',
+        'Deals-Module/smart-nudges',
+        {
+          type: 'category',
+          label: 'Deal Activities',
+          items: [
+            'Deals-Module/tasks',
+            'Deals-Module/notes',
+            'Deals-Module/meetings',
+            'Deals-Module/emails',
+            'Deals-Module/proposals',
+            'Deals-Module/quotes',
+          ],
+        },
+       
+      ],
+    },
+  ],
+  contactModuleSidebar: [
+    {
+      type: 'category',
+      label: 'Contacts Module',
+      items: [
+        'Contacts-Module/overview',
+        'Contacts-Module/creating-contacts',
+        'Contacts-Module/bulk-actions',
+        'Contacts-Module/export-contacts',
+        'Contacts-Module/custom-views',
+        'Contacts-Module/search-and-filters',
+        'Contacts-Module/contact-details',
+        {
+          type: 'category',
+          label: 'Contact Activities',
+          items: [
+            'Contacts-Module/activities-overview',
+            'Contacts-Module/notes',
+            'Contacts-Module/tasks',
+          ],
+        },
+        'Contacts-Module/linked-deals',
+        'Contacts-Module/linked-leads',
+      ],
+    },
+  ],
+  organizationModuleSidebar: [
+    {
+      type: 'category',
+      label: 'Organizations Module',
+      items: [
+        'Organizations-Module/overview',
+        'Organizations-Module/creating-organizations',
+        'Organizations-Module/bulk-actions',
+        'Organizations-Module/custom-views',
+        'Organizations-Module/search-and-filters',
+        'Organizations-Module/export-organizations',
+        'Organizations-Module/organization-details',
+        'Organizations-Module/linked-contacts',
+        'Organizations-Module/linked-deals',
+        'Organizations-Module/organization-activities',
+      ],
+    },
   ],
   settingsSidebar: [
     {

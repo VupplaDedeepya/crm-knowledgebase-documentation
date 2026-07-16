@@ -1,5 +1,5 @@
 ---
-id: lead-module
+id: leads-module
 title: Lead Module
 sidebar_position: 1
 description: Manage and convert leads efficiently with the Lead Module

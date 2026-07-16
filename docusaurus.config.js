@@ -47,10 +47,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -58,10 +54,6 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -100,6 +92,30 @@ const config = {
             sidebarId: 'onboardingSidebar',
             position: 'left',
             label: 'User Onboarding',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'leadModuleSidebar',
+            position: 'left',
+            label: 'Leads Module',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'dealModuleSidebar',
+            position: 'left',
+            label: 'Deals Module',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'contactModuleSidebar',
+            position: 'left',
+            label: 'Contacts Module',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'organizationModuleSidebar',
+            position: 'left',
+            label: 'Organizations Module',
           },
           {
             type: 'docSidebar',

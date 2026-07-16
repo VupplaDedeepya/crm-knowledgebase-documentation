@@ -9,7 +9,7 @@ The **Deals Module** helps **sales teams** manage potential business opportuniti
 
 ---
 
-### What is a Deal?
+## What is a Deal?
 
 A **Deal** represents a potential **business opportunity** that is actively being pursued with a customer or organization.
 
@@ -26,7 +26,7 @@ Once a **lead** shows genuine interest and enters the **sales process**, it can 
 
 ---
 
-### Importance of Deals Module
+## Importance of Deals Module
 
 The **Deals Module** is important because it helps organizations:
 
@@ -139,7 +139,7 @@ The CRM validates that the selected stage belongs to the selected pipeline.
 
 ---
 
-### Deal Status
+## Deal Status
 
 Deals can have statuses such as:
 
@@ -151,7 +151,7 @@ Users can update the status based on deal progress.
 
 ---
 
-### Winning or Losing a Deal
+## Winning or Losing a Deal
 
 The Deals Module provides quick options such as:
 
@@ -162,7 +162,7 @@ To update the outcome of the deal.
 
 ---
 
-### Deal Activities
+## Deal Activities
 
 The Deals Module includes multiple activity sections to manage all customer interactions related to the deal.
 
@@ -337,7 +337,7 @@ Deal activities help organizations:
 
 ---
 
-### AI Integration in Deals Module
+## AI Integration in Deals Module
 
 The CRM continuously monitors:
 
@@ -370,7 +370,7 @@ Higher scores usually indicate stronger engagement and higher conversion potenti
 
 ---
 
-### Benefits of Deals Module
+## Benefits of Deals Module
 
 The Deals Module helps organizations:
 
