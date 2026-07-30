@@ -118,6 +118,24 @@ const config = {
             label: 'Organizations Module',
           },
           {
+            type: 'doc',
+            docId: 'Activities-Module/activities',
+            position: 'left',
+            label: 'Activities Module',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'CalendarSidebar',
+            position: 'left',
+            label: 'Calendar Module',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'PulseInboxSidebar',
+            position: 'left',
+            label: 'Pulse Inbox',
+          },
+          {
             type: 'docSidebar',
             sidebarId: 'settingsSidebar',
             position: 'left',

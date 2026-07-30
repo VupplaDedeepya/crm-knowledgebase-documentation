@@ -111,7 +111,34 @@ const sidebars = {
         'Organizations-Module/organization-details',
         'Organizations-Module/linked-contacts',
         'Organizations-Module/linked-deals',
-        'Organizations-Module/organization-activities',
+      ],
+    },
+  ],
+
+   ActivitiesModuleSidebar: [
+    {
+      type: 'category',
+      label: 'Activities Module',
+      items: [
+        'Activities-Module/activities',
+      ],
+    },
+  ], 
+  CalendarSidebar: [
+    {
+      type: 'category',
+      label: 'Calendar Module',
+      items: [
+        'Calendar-Module/calendar',
+      ],
+    },
+  ],
+  PulseInboxSidebar: [
+    {
+      type: 'category',
+      label: 'Pulse Inbox',
+      items: [
+        'Pulse-Module/Pulse-Overview',
       ],
     },
   ],
@@ -207,4 +234,4 @@ const sidebars = {
   ]
 };
 
-export default sidebars;
+module.exports = sidebars;

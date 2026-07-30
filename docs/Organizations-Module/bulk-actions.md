@@ -10,7 +10,7 @@ The **Bulk Actions** feature allows users to perform the same operation on multi
 
 Bulk actions are applied only to the selected Organization records.
 
-![Bulk Actions](/img/organizations/OrganizationBulkActions.png)
+![Bulk Actions](/img/Organizations/OrganizationBulkActions.png)
 
 ---
 
@@ -77,6 +77,7 @@ The **Add Tags** action allows users to categorize multiple Organizations simult
 
 The selected tags are applied to all chosen Organizations.
 
+![AddTag](/img/organizations/AddTag.png)
 
 ---
 
@@ -105,6 +106,8 @@ Organizations that are no longer active can be archived in bulk.
 2. Click **Archive**.
 3. Review the confirmation message.
 4. Click **Archive** to confirm.
+
+![BulkArchive](/img/organizations/BulkArchive.png)
 
 ---
 
@@ -164,6 +167,92 @@ During the merge process:
 > A minimum of **two Organizations** must be selected before the **Merge** option becomes available.
 
 ---
+
+## Delete Organizations
+
+The **Delete** action allows users to permanently remove one or more Organization records from the CRM.
+
+Deleting Organizations should be performed with caution, as the action cannot be undone.
+
+### Steps
+
+1. Select one or more Organization records.
+2. Click **Delete** from the **Bulk Actions** menu.
+3. Review the confirmation dialog.
+4. Click **Delete** to permanently remove the selected Organizations.
+
+![DeleteConfirmation](/img/organizations/DeleteConfirmation.png)
+
+---
+
+### Delete Confirmation
+
+Before deleting Organizations, the system displays a confirmation dialog showing the number of selected records.
+
+If any selected Organization is linked to active Contacts or Deals, the CRM displays a warning message indicating the affected records.
+
+Example warning:
+
+> **Warning:** One or more selected Organizations are linked to active Contacts or Deals. Proceeding with deletion will permanently remove the selected Organization records.
+
+This helps users review the impact before confirming the deletion.
+
+---
+
+## Result
+
+After confirmation:
+
+- The selected Organization records are permanently deleted.
+- Associated relationships are removed from the CRM.
+- Deleted Organizations cannot be recovered.
+
+---
+
+## Recommendation
+
+Before deleting an Organization:
+
+- Verify that the Organization is no longer required.
+- Review any linked Contacts or Deals.
+- Consider using **Archive** instead of **Delete** if historical information needs to be preserved.
+
+---
+
+## Export Organizations
+
+The **Export** action allows users to download selected Organization records for reporting, analysis, backup, or external processing.
+
+Users can export one or multiple Organizations directly from the Organizations list.
+
+### Steps
+
+1. Select one or more Organization records.
+2. Click **Export** from the **Bulk Actions** menu.
+3. The CRM generates an export file containing the selected Organization records.
+4. Download the generated file.
+
+---
+
+### Export Benefits
+
+Exporting Organizations helps users:
+
+- Generate business reports.
+- Perform data analysis.
+- Create offline backups.
+- Share Organization information with authorized users.
+- Migrate data to external systems.
+- Maintain records for auditing purposes.
+
+---
+
+## Best Practices
+
+- Export only the required Organization records.
+- Verify the exported data before sharing it externally.
+- Ensure compliance with your organization's data security and privacy policies.
+- Store exported files securely to prevent unauthorized access.
 
 ## Benefits of Bulk Actions
 
