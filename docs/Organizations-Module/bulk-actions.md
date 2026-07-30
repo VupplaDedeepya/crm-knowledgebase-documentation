@@ -10,7 +10,7 @@ The **Bulk Actions** feature allows users to perform the same operation on multi
 
 Bulk actions are applied only to the selected Organization records.
 
-![Bulk Actions](/img/Organizations/OrganizationBulkActions.png)
+![Bulk Actions](/img/organizations/OrganizationBulkActions.png)
 
 ---
 

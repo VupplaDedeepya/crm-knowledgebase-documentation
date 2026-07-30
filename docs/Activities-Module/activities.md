@@ -87,7 +87,7 @@ Examples may include:
 
 Filter activities based on due dates or activity dates.
 
-![Date-Filter](/img/activities/date-filter.png)
+![Date-Filter](/img/Activities/date-filter.png)
 
 ---
 

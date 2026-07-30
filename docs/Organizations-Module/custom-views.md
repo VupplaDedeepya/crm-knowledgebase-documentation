@@ -39,7 +39,7 @@ Custom Views help users:
 
 The newly created view becomes available from the **View Selector** for future use.
 
-![Create Custom View](/img/Organizations/CreateViews.png)
+![Create Custom View](/img/organizations/CreateViews.png)
 
 ---
 

@@ -70,7 +70,7 @@ This allows users to perform more precise searches when working with a large num
 >
 > Search can be used together with **Quick Filters**, **Advanced Filters**, and **Custom Views** to quickly locate specific Organization records.
 
-![Column Search](/img/Organizations/ColumnSearch.png)
+![Column Search](/img/organizations/ColumnSearch.png)
 
 ---
 
@@ -120,7 +120,7 @@ This filter helps users quickly access:
 
 Multiple Quick Filters can be applied together for more refined results.
 
-![Quick Filters](/img/Organizations/CreateDate.png)
+![Quick Filters](/img/organizations/CreateDate.png)
 
 ---
 ### Last Activity Date
@@ -148,7 +148,7 @@ This filter is useful for:
 - Reviewing account activity within a specific timeframe.
 - Prioritizing Organizations based on recent interactions.
 
-![Last Activity Date Filter](/img/Organizations/LastActivityDateFilter.png)
+![Last Activity Date Filter](/img/organizations/LastActivityDateFilter.png)
 
 ---
 
@@ -172,7 +172,7 @@ To apply Advanced Filters:
 
 Additional filter conditions can be added using the **Add Filter (+)** option.
 
-![Advanced Filters](/img/Organizations/AdvancedFilters.png)
+![Advanced Filters](/img/organizations/AdvancedFilters.png)
 
 ---
 

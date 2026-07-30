@@ -10,7 +10,7 @@ The **Calendar** module provides a visual scheduling interface for managing CRM 
 
 All activities created within the CRM are automatically reflected in the Calendar, providing a centralized view of scheduled work.
 
-![Calendar Overview](/img/Calendar/Calendar.png)
+![Calendar Overview](/img/Calendar/calendar.png)
 
 ---
 
