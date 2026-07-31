@@ -41,13 +41,33 @@ export const DOC_INDEX = [
   {
     label: 'Introduction',
     to: '/docs/intro',
-    entities: ['intro', 'introduction', 'getting started', 'start'],
-    actions: ['overview', 'begin', 'start'],
-    phrases: ['getting started', 'introduction', 'crm intro'],
+    kind: 'definition',
+    entities: ['crm', 'intro', 'introduction', 'workspace', 'getting started', 'sales astra'],
+    actions: ['overview', 'begin', 'start', 'learn'],
+    keywords: [
+      'customer relationship management',
+      'what is crm',
+      'what is a crm',
+      'centralized',
+      'workspace',
+      'team members',
+    ],
+    phrases: [
+      'getting started',
+      'introduction',
+      'crm intro',
+      'what is crm',
+      'what is a crm',
+      'what is sales astra',
+      'what is cx astra',
+      'explain crm',
+      'define crm',
+    ],
   },
   {
     label: 'Leads Module Intro',
     to: '/docs/leads-module',
+    kind: 'definition',
     entities: ['lead', 'leads'],
     actions: ['intro', 'introduction'],
     phrases: ['leads module intro'],
@@ -55,6 +75,7 @@ export const DOC_INDEX = [
   {
     label: 'Deals Module Intro',
     to: '/docs/deal-module',
+    kind: 'definition',
     entities: ['deal', 'deals'],
     actions: ['intro', 'introduction'],
     phrases: ['deals module intro'],
@@ -64,8 +85,10 @@ export const DOC_INDEX = [
   {
     label: 'User Onboarding',
     to: '/docs/onboarding',
-    entities: ['onboarding', 'signup', 'sign up', 'register', 'registration'],
+    kind: 'howto',
+    entities: ['onboarding', 'signup', 'sign up', 'register', 'registration', 'account'],
     actions: ['start', 'begin', 'complete', 'create'],
+    keywords: ['first login', 'sign up', 'register', 'welcome'],
     phrases: [
       'user onboarding',
       'how to signup',
@@ -73,11 +96,13 @@ export const DOC_INDEX = [
       'create account',
       'register account',
       'onboarding guide',
+      'how to get started',
     ],
   },
   {
     label: 'Profile Settings',
     to: '/docs/profile-settings',
+    kind: 'configure',
     entities: ['profile', 'password', 'signature', 'calendar'],
     actions: ['change', 'update', 'configure', 'setup'],
     phrases: ['profile settings', 'change password', 'email signature'],
@@ -87,6 +112,7 @@ export const DOC_INDEX = [
   {
     label: 'Creating Leads',
     to: '/docs/Leads-Module/creating-leads',
+    kind: 'howto',
     entities: ['lead', 'leads'],
     actions: ['create', 'creating', 'add', 'adding', 'new', 'make', 'making', 'register'],
     phrases: [
@@ -98,25 +124,36 @@ export const DOC_INDEX = [
       'add lead',
       'new lead',
       'making a lead',
+      'how do i create a lead',
     ],
   },
   {
     label: 'Lead Conversion',
     to: '/docs/Leads-Module/lead-conversion',
+    kind: 'howto',
     entities: ['lead', 'leads'],
     actions: ['convert', 'converting', 'conversion', 'qualify', 'qualification'],
-    phrases: ['convert a lead', 'convert lead', 'lead conversion', 'qualify lead'],
+    phrases: [
+      'convert a lead',
+      'convert lead',
+      'lead conversion',
+      'qualify lead',
+      'how to convert a lead',
+      'convert lead to deal',
+    ],
   },
   {
     label: 'Lead Search and Filters',
     to: '/docs/Leads-Module/search-and-filters',
+    kind: 'howto',
     entities: ['lead', 'leads'],
     actions: ['search', 'filter', 'filters', 'find', 'locate'],
-    phrases: ['search leads', 'filter leads', 'find a lead'],
+    phrases: ['search leads', 'filter leads', 'find a lead', 'how to search leads'],
   },
   {
     label: 'Lead Bulk Actions',
     to: '/docs/Leads-Module/bulk-actions',
+    kind: 'howto',
     entities: ['lead', 'leads'],
     actions: ['bulk', 'mass', 'multiple', 'delete', 'archive', 'assign'],
     phrases: ['bulk leads', 'bulk actions leads', 'archive leads', 'delete leads'],
@@ -124,6 +161,7 @@ export const DOC_INDEX = [
   {
     label: 'Lead Custom Views',
     to: '/docs/Leads-Module/custom-views',
+    kind: 'howto',
     entities: ['lead', 'leads'],
     actions: ['view', 'views', 'custom'],
     phrases: ['lead custom views', 'custom views leads', 'create lead view'],
@@ -131,20 +169,23 @@ export const DOC_INDEX = [
   {
     label: 'Export Leads',
     to: '/docs/Leads-Module/export-leads',
+    kind: 'howto',
     entities: ['lead', 'leads'],
     actions: ['export', 'download', 'csv'],
-    phrases: ['export leads', 'download leads'],
+    phrases: ['export leads', 'download leads', 'how to export leads'],
   },
   {
     label: 'Lead Smart Nudges',
     to: '/docs/Leads-Module/smart-nudges',
+    kind: 'definition',
     entities: ['lead', 'leads', 'nudge', 'nudges'],
     actions: ['smart', 'ai', 'recommend'],
-    phrases: ['smart nudges', 'lead nudges'],
+    phrases: ['smart nudges', 'lead nudges', 'what are smart nudges'],
   },
   {
     label: 'Lead Notes',
     to: '/docs/Leads-Module/notes',
+    kind: 'howto',
     entities: ['lead', 'leads', 'note', 'notes'],
     actions: ['create', 'add', 'write'],
     phrases: ['lead notes', 'add note to lead', 'create note lead'],
@@ -152,6 +193,7 @@ export const DOC_INDEX = [
   {
     label: 'Lead Tasks',
     to: '/docs/Leads-Module/tasks',
+    kind: 'howto',
     entities: ['lead', 'leads', 'task', 'tasks'],
     actions: ['create', 'add', 'schedule'],
     phrases: ['lead tasks', 'create task for lead'],
@@ -159,6 +201,7 @@ export const DOC_INDEX = [
   {
     label: 'Lead Meetings',
     to: '/docs/Leads-Module/meetings',
+    kind: 'howto',
     entities: ['lead', 'leads', 'meeting', 'meetings'],
     actions: ['schedule', 'create', 'log'],
     phrases: ['lead meetings', 'schedule meeting lead', 'log meeting lead'],
@@ -166,6 +209,7 @@ export const DOC_INDEX = [
   {
     label: 'Lead Emails',
     to: '/docs/Leads-Module/emails',
+    kind: 'howto',
     entities: ['lead', 'leads', 'email', 'emails'],
     actions: ['send', 'compose'],
     phrases: ['lead emails', 'email a lead', 'send email lead'],
@@ -173,9 +217,30 @@ export const DOC_INDEX = [
   {
     label: 'Leads Overview',
     to: '/docs/Leads-Module/overview',
-    entities: ['lead', 'leads'],
-    actions: ['overview', 'intro', 'introduction'],
-    phrases: ['leads module', 'lead overview', 'leads overview'],
+    kind: 'definition',
+    entities: ['lead', 'leads', 'prospect', 'prospects'],
+    actions: ['overview', 'intro', 'introduction', 'understand'],
+    keywords: [
+      'potential customers',
+      'enquiry',
+      'qualification',
+      'lead lifecycle',
+      'capture',
+      'organize',
+    ],
+    phrases: [
+      'leads module',
+      'lead overview',
+      'leads overview',
+      'what are leads',
+      'what is a lead',
+      'what is lead',
+      'explain leads',
+      'define lead',
+      'define leads',
+      'meaning of lead',
+      'about leads',
+    ],
   },
 
   // ---------- Deals ----------
@@ -288,9 +353,22 @@ export const DOC_INDEX = [
   {
     label: 'Deals Overview',
     to: '/docs/Deals-Module/overview',
-    entities: ['deal', 'deals', 'pipeline'],
+    kind: 'definition',
+    entities: ['deal', 'deals', 'pipeline', 'opportunity'],
     actions: ['overview', 'intro'],
-    phrases: ['deals module', 'deal overview', 'deals overview'],
+    keywords: ['pipeline', 'opportunity', 'sales process', 'stages'],
+    phrases: [
+      'deals module',
+      'deal overview',
+      'deals overview',
+      'what are deals',
+      'what is a deal',
+      'what is deal',
+      'explain deals',
+      'define deal',
+      'about deals',
+      'what is pipeline',
+    ],
   },
 
   // ---------- Contacts ----------
@@ -374,9 +452,28 @@ export const DOC_INDEX = [
   {
     label: 'Contacts Overview',
     to: '/docs/Contacts-Module/overview',
-    entities: ['contact', 'contacts'],
+    kind: 'definition',
+    entities: ['contact', 'contacts', 'people', 'person'],
     actions: ['overview', 'intro'],
-    phrases: ['contacts module', 'contact overview', 'contacts overview'],
+    keywords: ['customer', 'person', 'people', 'relationship'],
+    phrases: [
+      'contacts module',
+      'contact overview',
+      'contacts overview',
+      'what are contacts',
+      'what is a contact',
+      'explain contacts',
+      'define contact',
+      'about contacts',
+    ],
+  },
+  {
+    label: 'Contact Activities Overview',
+    to: '/docs/Contacts-Module/activities-overview',
+    kind: 'definition',
+    entities: ['contact', 'contacts', 'activity', 'activities'],
+    actions: ['overview', 'manage'],
+    phrases: ['contact activities', 'activities on contact'],
   },
 
   // ---------- Organizations ----------
@@ -447,22 +544,37 @@ export const DOC_INDEX = [
   {
     label: 'Organizations Overview',
     to: '/docs/Organizations-Module/overview',
-    entities: ['organization', 'organizations', 'account', 'company'],
+    kind: 'definition',
+    entities: ['organization', 'organizations', 'account', 'company', 'companies'],
     actions: ['overview', 'intro'],
-    phrases: ['organizations module', 'organization overview', 'organizations overview'],
+    keywords: ['company', 'account', 'business'],
+    phrases: [
+      'organizations module',
+      'organization overview',
+      'organizations overview',
+      'what are organizations',
+      'what is an organization',
+      'what is a company',
+      'explain organizations',
+      'about organizations',
+    ],
   },
 
   // ---------- Activities ----------
   {
     label: 'Activities',
     to: '/docs/Activities-Module/activities',
+    kind: 'definition',
     entities: ['activity', 'activities', 'task', 'tasks', 'timeline'],
     actions: ['create', 'track', 'manage', 'overview', 'filter'],
+    keywords: ['notes', 'meetings', 'emails', 'follow up'],
     phrases: [
       'activities module',
       'how to manage activities',
       'create activity',
       'activity filters',
+      'what are activities',
+      'what is an activity',
     ],
   },
 
@@ -470,6 +582,7 @@ export const DOC_INDEX = [
   {
     label: 'Calendar',
     to: '/docs/Calendar-Module/calendar',
+    kind: 'howto',
     entities: ['calendar', 'meeting', 'meetings', 'schedule', 'appointment'],
     actions: ['create', 'view', 'schedule', 'open'],
     phrases: [
@@ -480,6 +593,8 @@ export const DOC_INDEX = [
       'day view',
       'week view',
       'month view',
+      'how to schedule a meeting',
+      'how to use calendar',
     ],
   },
 
@@ -487,20 +602,33 @@ export const DOC_INDEX = [
   {
     label: 'Pulse Inbox',
     to: '/docs/Pulse-Module/Pulse-Overview',
+    kind: 'definition',
     entities: ['pulse', 'inbox', 'message', 'messages', 'chat', 'conversation'],
     actions: ['overview', 'open', 'use', 'reply'],
-    phrases: ['pulse inbox', 'inbox overview', 'how to use pulse', 'open inbox'],
+    keywords: ['customer conversations', 'omnichannel', 'support inbox'],
+    phrases: [
+      'pulse inbox',
+      'inbox overview',
+      'how to use pulse',
+      'open inbox',
+      'what is pulse',
+      'what is pulse inbox',
+      'explain pulse',
+      'about pulse',
+    ],
   },
   {
     label: 'Pulse Settings Overview',
     to: '/docs/Pulse-Settings/Overview',
+    kind: 'configure',
     entities: ['pulse', 'inbox'],
     actions: ['settings', 'configure', 'setup'],
     phrases: ['pulse settings', 'configure pulse'],
   },
   {
     label: 'Pulse Channels',
-    to: '/docs/Pulse-Settings/Channels',
+    to: '/docs/Pulse-Settings/Channels/Channels',
+    kind: 'configure',
     entities: ['pulse', 'channel', 'channels', 'whatsapp', 'instagram', 'messenger'],
     actions: ['setup', 'configure', 'add', 'open', 'view'],
     phrases: [
@@ -573,23 +701,47 @@ export const DOC_INDEX = [
   {
     label: 'User Management',
     to: '/docs/user-management/overview',
+    kind: 'definition',
     entities: ['user', 'users', 'management'],
     actions: ['manage', 'overview', 'configure'],
-    phrases: ['user management', 'manage users overview'],
+    phrases: ['user management', 'manage users overview', 'what is user management'],
   },
   {
     label: 'Manage Users',
     to: '/docs/user-management/users',
-    entities: ['user', 'users'],
-    actions: ['create', 'add', 'invite', 'manage'],
-    phrases: ['create user', 'add user', 'invite user', 'manage users'],
+    kind: 'howto',
+    entities: ['user', 'users', 'member', 'members', 'teammate', 'teammates'],
+    actions: ['create', 'add', 'invite', 'inviting', 'manage', 'onboard'],
+    keywords: ['invitation', 'resend', 'deactivate', 'workspace users', 'email address'],
+    phrases: [
+      'create user',
+      'add user',
+      'invite user',
+      'invite users',
+      'manage users',
+      'how to invite users',
+      'how to invite a user',
+      'how to invite user',
+      'how do i invite users',
+      'add team members',
+      'invite team members',
+      'invite teammate',
+      'onboard users',
+    ],
   },
   {
     label: 'Roles',
     to: '/docs/user-management/roles',
+    kind: 'configure',
     entities: ['role', 'roles', 'permission', 'permissions'],
     actions: ['create', 'add', 'manage', 'configure'],
-    phrases: ['create role', 'manage roles', 'user roles'],
+    phrases: [
+      'create role',
+      'manage roles',
+      'user roles',
+      'what are roles',
+      'how to create a role',
+    ],
   },
   {
     label: 'Access and Sharing',
@@ -664,13 +816,21 @@ export const DOC_INDEX = [
   {
     label: 'Automation Workflows',
     to: '/docs/Automation/Workflows/Overview',
+    kind: 'definition',
     entities: ['automation', 'workflow', 'workflows'],
     actions: ['create', 'setup', 'configure', 'overview'],
-    phrases: ['create workflow', 'automation workflows', 'how to create a workflow'],
+    phrases: [
+      'create workflow',
+      'automation workflows',
+      'how to create a workflow',
+      'what are workflows',
+      'what is automation',
+    ],
   },
   {
     label: 'Lead Workflows',
     to: '/docs/Automation/Workflows/Lead-Workflows',
+    kind: 'howto',
     entities: ['lead', 'leads', 'workflow', 'workflows'],
     actions: ['create', 'setup', 'automate'],
     phrases: ['lead workflows', 'create lead workflow'],
@@ -678,23 +838,74 @@ export const DOC_INDEX = [
   {
     label: 'Deal Workflows',
     to: '/docs/Automation/Workflows/Deal-Workflows',
+    kind: 'howto',
     entities: ['deal', 'deals', 'workflow', 'workflows'],
     actions: ['create', 'setup', 'automate'],
     phrases: ['deal workflows', 'create deal workflow'],
   },
   {
+    label: 'Workflow Action Nodes',
+    to: '/docs/Automation/Workflows/Workflow-Action-Nodes',
+    kind: 'configure',
+    entities: ['workflow', 'workflows', 'action', 'actions', 'node', 'nodes'],
+    actions: ['configure', 'setup', 'use'],
+    phrases: ['workflow actions', 'action nodes', 'workflow action nodes'],
+  },
+  {
+    label: 'Logic Control Nodes',
+    to: '/docs/Automation/Workflows/Logic-Control-Nodes',
+    kind: 'configure',
+    entities: ['workflow', 'logic', 'condition', 'conditions', 'branch'],
+    actions: ['configure', 'setup', 'use'],
+    phrases: ['logic control nodes', 'workflow conditions', 'if else workflow'],
+  },
+  {
+    label: 'Timing Delay Nodes',
+    to: '/docs/Automation/Workflows/Timing-Delay-Nodes',
+    kind: 'configure',
+    entities: ['workflow', 'delay', 'timing', 'wait'],
+    actions: ['configure', 'setup', 'use'],
+    phrases: ['timing delay nodes', 'workflow delay', 'wait node'],
+  },
+  {
+    label: 'Communication Actions',
+    to: '/docs/Automation/Workflows/Communication-Actions',
+    kind: 'configure',
+    entities: ['workflow', 'email', 'sms', 'communication'],
+    actions: ['configure', 'send', 'setup'],
+    phrases: ['communication actions', 'workflow email action'],
+  },
+  {
+    label: 'Task Activity Actions',
+    to: '/docs/Automation/Workflows/Task-Activity-Actions',
+    kind: 'configure',
+    entities: ['workflow', 'task', 'activity'],
+    actions: ['configure', 'create', 'setup'],
+    phrases: ['task activity actions', 'workflow create task'],
+  },
+  {
+    label: 'Integration Actions',
+    to: '/docs/Automation/Workflows/Integration-Actions',
+    kind: 'configure',
+    entities: ['workflow', 'integration', 'webhook'],
+    actions: ['configure', 'setup', 'connect'],
+    phrases: ['integration actions', 'workflow webhook'],
+  },
+  {
     label: 'Sequences',
     to: '/docs/Automation/Sequences',
-    entities: ['sequence', 'sequences'],
+    kind: 'howto',
+    entities: ['sequence', 'sequences', 'cadence'],
     actions: ['create', 'setup', 'configure'],
-    phrases: ['create sequence', 'automation sequences'],
+    phrases: ['create sequence', 'automation sequences', 'what are sequences'],
   },
   {
     label: 'Scoring',
     to: '/docs/Automation/Scoring',
+    kind: 'configure',
     entities: ['scoring', 'score', 'rule', 'rules'],
     actions: ['create', 'setup', 'configure'],
-    phrases: ['create scoring rule', 'scoring rules'],
+    phrases: ['create scoring rule', 'scoring rules', 'what is scoring'],
   },
 ];
 
@@ -705,6 +916,7 @@ const ACTION_INTENTS = [
   'adding',
   'new',
   'convert',
+  'converting',
   'export',
   'search',
   'filter',
@@ -716,12 +928,77 @@ const ACTION_INTENTS = [
   'schedule',
   'configure',
   'setup',
+  'invite',
+  'inviting',
+  'manage',
+  'update',
+  'edit',
+  'install',
+  'connect',
+  'automate',
 ];
+
+const DEFINITION_PATTERNS = [
+  /^what\s+(is|are)\b/,
+  /^what'?s\b/,
+  /^who\s+(is|are)\b/,
+  /^explain\b/,
+  /^define\b/,
+  /^meaning\s+of\b/,
+  /^tell\s+me\s+about\b/,
+  /^about\b/,
+];
+
+const HOWTO_PATTERNS = [
+  /^how\s+(to|do|can|should)\b/,
+  /^how\s+do\s+i\b/,
+  /^steps?\s+to\b/,
+  /^way\s+to\b/,
+  /\bhow\s+to\b/,
+];
+
+function singularize(token) {
+  if (token.endsWith('ies') && token.length > 4) {
+    return `${token.slice(0, -3)}y`;
+  }
+  if (token.endsWith('ses') || token.endsWith('xes') || token.endsWith('zes')) {
+    return token.slice(0, -2);
+  }
+  if (token.endsWith('s') && !token.endsWith('ss') && token.length > 3) {
+    return token.slice(0, -1);
+  }
+  return token;
+}
+
+function expandTokens(tokens) {
+  const expanded = new Set(tokens);
+  for (const token of tokens) {
+    expanded.add(singularize(token));
+    if (!token.endsWith('s')) {
+      expanded.add(`${token}s`);
+    }
+  }
+  return [...expanded];
+}
+
+export function detectIntent(query) {
+  const normalized = normalizeQuery(query);
+  if (DEFINITION_PATTERNS.some((pattern) => pattern.test(normalized))) {
+    return 'definition';
+  }
+  if (HOWTO_PATTERNS.some((pattern) => pattern.test(normalized))) {
+    return 'howto';
+  }
+  if (/\b(settings?|configure|configuration|setup)\b/.test(normalized)) {
+    return 'configure';
+  }
+  return 'general';
+}
 
 export function normalizeQuery(query) {
   return query
     .toLowerCase()
-    .replace(/[^\w\s]/g, ' ')
+    .replace(/[^\w\s']/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -732,75 +1009,127 @@ export function tokenize(query) {
     .filter((word) => word && !STOP_WORDS.has(word));
 }
 
-function scoreDoc(doc, normalizedQuery, tokens) {
+function includesTerm(haystack, term) {
+  if (!term) {
+    return false;
+  }
+  if (term.includes(' ')) {
+    return haystack.includes(term);
+  }
+  return (
+    haystack.split(' ').includes(term) ||
+    haystack.includes(` ${term} `) ||
+    haystack.startsWith(`${term} `) ||
+    haystack.endsWith(` ${term}`)
+  );
+}
+
+function scoreDoc(doc, normalizedQuery, tokens, intent) {
   let score = 0;
+  const expanded = expandTokens(tokens);
+  const labelNormalized = normalizeQuery(doc.label);
+  const searchable = [
+    doc.label,
+    ...(doc.entities || []),
+    ...(doc.actions || []),
+    ...(doc.keywords || []),
+    ...(doc.phrases || []),
+  ]
+    .join(' ')
+    .toLowerCase();
 
   for (const phrase of doc.phrases || []) {
     if (normalizedQuery.includes(phrase)) {
-      score += 100;
+      score += 120;
     }
   }
 
   const matchedEntities = (doc.entities || []).filter(
-    (entity) => tokens.includes(entity) || normalizedQuery.includes(entity),
+    (entity) =>
+      expanded.includes(entity) ||
+      includesTerm(normalizedQuery, entity) ||
+      tokens.some((token) => singularize(token) === singularize(entity)),
   );
   const matchedActions = (doc.actions || []).filter(
-    (action) => tokens.includes(action) || normalizedQuery.includes(action),
+    (action) =>
+      expanded.includes(action) ||
+      includesTerm(normalizedQuery, action) ||
+      tokens.some((token) => singularize(token) === singularize(action)),
+  );
+  const matchedKeywords = (doc.keywords || []).filter((keyword) =>
+    includesTerm(normalizedQuery, keyword) ||
+    expanded.some((token) => includesTerm(keyword, token)),
   );
 
   if (matchedEntities.length) {
-    score += 20 * matchedEntities.length;
+    score += 25 * matchedEntities.length;
   }
   if (matchedActions.length) {
-    score += 35 * matchedActions.length;
+    score += 40 * matchedActions.length;
+  }
+  if (matchedKeywords.length) {
+    score += 18 * matchedKeywords.length;
   }
   if (matchedEntities.length && matchedActions.length) {
-    score += 40;
+    score += 55;
   }
-  if (matchedEntities.length && !matchedActions.length && /overview/i.test(doc.label)) {
-    score += 15;
+
+  // Label token overlap (e.g. "user roles" → Roles)
+  for (const token of expanded) {
+    if (labelNormalized.includes(token) && token.length > 2) {
+      score += 12;
+    }
   }
-  if (
-    matchedActions.some((action) => ACTION_INTENTS.includes(action)) &&
-    /overview/i.test(doc.label)
-  ) {
-    score -= 25;
+
+  // Soft keyword bag match
+  for (const token of expanded) {
+    if (token.length > 2 && searchable.includes(token)) {
+      score += 4;
+    }
+  }
+
+  const isOverview =
+    doc.kind === 'definition' ||
+    /overview|intro|introduction|what is/i.test(doc.label) ||
+    /\/overview$/i.test(doc.to);
+
+  if (intent === 'definition') {
+    if (isOverview && matchedEntities.length) {
+      score += 90;
+    }
+    if (doc.kind === 'howto' && matchedActions.length === 0) {
+      score -= 35;
+    }
+    if (matchedActions.some((action) => ACTION_INTENTS.includes(action))) {
+      score -= 20;
+    }
+  }
+
+  if (intent === 'howto') {
+    if (doc.kind === 'howto' && matchedEntities.length && matchedActions.length) {
+      score += 70;
+    }
+    if (isOverview && matchedActions.some((action) => ACTION_INTENTS.includes(action))) {
+      score -= 45;
+    }
+  }
+
+  if (intent === 'configure') {
+    if (doc.kind === 'configure') {
+      score += 40;
+    }
+  }
+
+  if (matchedEntities.length && !matchedActions.length && isOverview) {
+    score += 20;
   }
 
   return score;
 }
 
-export function resolveSearch(query) {
-  const trimmed = query.trim();
-  if (!trimmed) {
-    return null;
-  }
+const MIN_MATCH_SCORE = 20;
 
-  const normalizedQuery = normalizeQuery(trimmed);
-  const tokens = tokenize(trimmed);
-
-  let best = null;
-  let bestScore = 0;
-
-  for (const doc of DOC_INDEX) {
-    const score = scoreDoc(doc, normalizedQuery, tokens);
-    if (score > bestScore) {
-      bestScore = score;
-      best = doc;
-    }
-  }
-
-  if (best && bestScore > 0) {
-    return {label: best.label, to: best.to};
-  }
-
-  return {
-    label: trimmed.replace(/\b\w/g, (char) => char.toUpperCase()),
-    to: '/docs/intro',
-  };
-}
-
-export function suggestSearches(query, limit = 6) {
+function rankDocs(query) {
   const trimmed = query.trim();
   if (!trimmed) {
     return [];
@@ -808,13 +1137,26 @@ export function suggestSearches(query, limit = 6) {
 
   const normalizedQuery = normalizeQuery(trimmed);
   const tokens = tokenize(trimmed);
+  const intent = detectIntent(trimmed);
 
   return DOC_INDEX.map((doc) => ({
     ...doc,
-    score: scoreDoc(doc, normalizedQuery, tokens),
+    score: scoreDoc(doc, normalizedQuery, tokens, intent),
   }))
-    .filter((doc) => doc.score > 0)
-    .sort((a, b) => b.score - a.score)
+    .filter((doc) => doc.score >= MIN_MATCH_SCORE)
+    .sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
+}
+
+export function resolveSearch(query) {
+  const ranked = rankDocs(query);
+  if (!ranked.length) {
+    return null;
+  }
+  return {label: ranked[0].label, to: ranked[0].to};
+}
+
+export function suggestSearches(query, limit = 6) {
+  return rankDocs(query)
     .slice(0, limit)
     .map(({label, to, score}) => ({label, to, score}));
 }

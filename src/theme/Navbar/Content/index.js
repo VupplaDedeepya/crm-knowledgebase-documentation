@@ -9,6 +9,7 @@ import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
+import {useLocation} from '@docusaurus/router';
 import NavbarItem from '@theme/NavbarItem';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
@@ -19,6 +20,12 @@ import styles from './styles.module.css';
 
 function useNavbarItems() {
   return useThemeConfig().navbar.items;
+}
+
+function useIsHomePage() {
+  const {pathname} = useLocation();
+  const normalized = pathname.replace(/\/$/, '') || '/';
+  return normalized === '/' || normalized === '/index';
 }
 
 function NavbarItems({items}) {
@@ -70,6 +77,7 @@ export default function NavbarContent() {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
+  const isHomePage = useIsHomePage();
 
   return (
     <NavbarContentLayout
@@ -82,7 +90,7 @@ export default function NavbarContent() {
       }
       right={
         <>
-          <NavbarDocSearch />
+          {!isHomePage ? <NavbarDocSearch /> : null}
           <NavbarItems items={rightItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
         </>

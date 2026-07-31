@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
 import {useHistory} from '@docusaurus/router';
-import {Search, X} from 'lucide-react';
+import {History, Search, X} from 'lucide-react';
 import {resolveSearch, suggestSearches} from '@site/src/utils/docSearch';
 
 import styles from './NavbarDocSearch.module.css';
@@ -30,6 +30,21 @@ function persistRecentSearches(items) {
   return items;
 }
 
+function clearRecentSearches() {
+  return persistRecentSearches([]);
+}
+
+function removeRecentSearch(entry) {
+  const next = loadRecentSearches().filter(
+    (item) =>
+      !(
+        item.to === entry.to &&
+        item.label.toLowerCase() === entry.label.toLowerCase()
+      ),
+  );
+  return persistRecentSearches(next);
+}
+
 function addRecentSearch(entry) {
   const label = entry.label.trim();
   if (!label) {
@@ -51,6 +66,7 @@ export default function NavbarDocSearch() {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [recent, setRecent] = useState([]);
+  const [noResultMessage, setNoResultMessage] = useState('');
 
   useEffect(() => {
     setRecent(loadRecentSearches());
@@ -67,7 +83,11 @@ export default function NavbarDocSearch() {
   }, []);
 
   const suggestions = useMemo(() => suggestSearches(query, 6), [query]);
-  const panelItems = query.trim() ? suggestions : recent;
+  const trimmedQuery = query.trim();
+  const showingRecent = !trimmedQuery && recent.length > 0;
+  const panelItems = trimmedQuery ? suggestions : recent;
+  const showNoResults =
+    Boolean(trimmedQuery) && suggestions.length === 0 && (open || Boolean(noResultMessage));
 
   const goTo = (entry) => {
     if (!entry?.to) {
@@ -75,16 +95,37 @@ export default function NavbarDocSearch() {
     }
     setRecent(addRecentSearch(entry));
     setQuery('');
+    setNoResultMessage('');
     setOpen(false);
     history.push(entry.to);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
+    if (!trimmedQuery) {
+      return;
+    }
     const result = resolveSearch(query);
     if (result) {
       goTo(result);
+      return;
     }
+    setNoResultMessage(
+      `No docs found for “${trimmedQuery}”. Try another CRM topic or keyword.`,
+    );
+    setOpen(true);
+  };
+
+  const onClearRecent = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setRecent(clearRecentSearches());
+  };
+
+  const onRemoveRecent = (event, entry) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setRecent(removeRecentSearch(entry));
   };
 
   return (
@@ -93,7 +134,7 @@ export default function NavbarDocSearch() {
         <label className={styles.srOnly} htmlFor="navbar-docs-search">
           Search documentation
         </label>
-        <Search className={styles.icon} size={16} strokeWidth={2.2} aria-hidden="true" />
+        <Search className={styles.icon} size={18} strokeWidth={2.2} aria-hidden="true" />
         <input
           id="navbar-docs-search"
           className={styles.input}
@@ -101,10 +142,11 @@ export default function NavbarDocSearch() {
           value={query}
           onChange={(event) => {
             setQuery(event.target.value);
+            setNoResultMessage('');
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
-          placeholder="Search docs..."
+          placeholder="Search for guides, modules, and more..."
           autoComplete="off"
         />
         {query ? (
@@ -112,31 +154,83 @@ export default function NavbarDocSearch() {
             type="button"
             className={styles.clear}
             aria-label="Clear search"
-            onClick={() => setQuery('')}
+            onClick={() => {
+              setQuery('');
+              setNoResultMessage('');
+            }}
           >
-            <X size={14} strokeWidth={2.3} />
+            <X size={16} strokeWidth={2.3} />
           </button>
         ) : null}
       </form>
 
-      {open && panelItems.length > 0 ? (
+      {open && (panelItems.length > 0 || showNoResults) ? (
         <div className={styles.panel} role="listbox">
-          <div className={styles.panelLabel}>
-            {query.trim() ? 'Suggestions' : 'Recent searches'}
-          </div>
-          {panelItems.map((item) => (
-            <Link
-              key={`${item.to}-${item.label}`}
-              className={styles.item}
-              to={item.to}
-              onClick={(event) => {
-                event.preventDefault();
-                goTo(item);
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {showNoResults ? (
+            <div className={styles.emptyState} role="status">
+              <p className={styles.emptyTitle}>No matching docs</p>
+              <p className={styles.emptyText}>
+                {noResultMessage ||
+                  `We couldn’t find documentation for “${trimmedQuery}”. Try a module name or action like “create lead”.`}
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className={styles.panelHeader}>
+                <span className={styles.panelLabel}>
+                  {trimmedQuery ? 'Suggestions' : 'Recent searches'}
+                </span>
+                {showingRecent ? (
+                  <button
+                    type="button"
+                    className={styles.clearRecent}
+                    onClick={onClearRecent}
+                  >
+                    Clear
+                  </button>
+                ) : null}
+              </div>
+              {panelItems.map((item) => (
+                <div key={`${item.to}-${item.label}`} className={styles.itemRow}>
+                  <Link
+                    className={styles.item}
+                    to={item.to}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      goTo(item);
+                    }}
+                  >
+                    {showingRecent ? (
+                      <History
+                        className={styles.itemIcon}
+                        size={15}
+                        strokeWidth={2.2}
+                        aria-hidden="true"
+                      />
+                    ) : (
+                      <Search
+                        className={styles.itemIcon}
+                        size={15}
+                        strokeWidth={2.2}
+                        aria-hidden="true"
+                      />
+                    )}
+                    <span className={styles.itemLabel}>{item.label}</span>
+                  </Link>
+                  {showingRecent ? (
+                    <button
+                      type="button"
+                      className={styles.removeItem}
+                      aria-label={`Remove ${item.label} from recent searches`}
+                      onClick={(event) => onRemoveRecent(event, item)}
+                    >
+                      <X size={14} strokeWidth={2.3} />
+                    </button>
+                  ) : null}
+                </div>
+              ))}
+            </>
+          )}
         </div>
       ) : null}
     </div>

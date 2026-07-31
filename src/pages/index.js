@@ -230,12 +230,20 @@ function addRecentSearch(entry) {
 function HomepageHero() {
   const history = useHistory();
   const [query, setQuery] = useState('');
+  const [noResultMessage, setNoResultMessage] = useState('');
 
   const runSearch = (rawQuery, destination) => {
     const result = destination || resolveSearch(rawQuery);
     if (!result) {
+      const trimmed = rawQuery.trim();
+      setNoResultMessage(
+        trimmed
+          ? `No docs found for “${trimmed}”. Try another CRM topic or keyword.`
+          : '',
+      );
       return;
     }
+    setNoResultMessage('');
     addRecentSearch(result);
     history.push(result.to);
   };
@@ -276,7 +284,10 @@ function HomepageHero() {
                   className={styles.searchInput}
                   type="search"
                   value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={(event) => {
+                    setQuery(event.target.value);
+                    setNoResultMessage('');
+                  }}
                   placeholder="Search for guides, modules, and more..."
                   autoComplete="off"
                 />
@@ -285,12 +296,20 @@ function HomepageHero() {
                     type="button"
                     className={styles.searchClear}
                     aria-label="Clear search"
-                    onClick={() => setQuery('')}
+                    onClick={() => {
+                      setQuery('');
+                      setNoResultMessage('');
+                    }}
                   >
                     <X size={18} strokeWidth={2.3} />
                   </button>
                 ) : null}
               </div>
+              {noResultMessage ? (
+                <p className={styles.searchEmpty} role="status">
+                  {noResultMessage}
+                </p>
+              ) : null}
             </form>
 
             <div className={styles.popular}>

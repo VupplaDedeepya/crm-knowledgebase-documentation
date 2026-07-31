@@ -1,33 +1,33 @@
 .root {
   position: relative;
-  margin-right: 0.35rem;
+  margin-right: 0.45rem;
 }
 
 .form {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  width: min(240px, 28vw);
-  min-width: 170px;
-  padding: 0.4rem 0.7rem;
-  border-radius: 999px;
-  background: #f8fafc;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  box-shadow: none;
-  transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  gap: 0.65rem;
+  width: min(320px, 34vw);
+  min-width: 220px;
+  padding: 0.55rem 0.75rem 0.55rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form:focus-within {
   background: #ffffff;
-  border-color: transparent;
   box-shadow:
-    0 0 0 3px rgba(145, 47, 245, 0.22),
-    0 6px 16px rgba(15, 23, 42, 0.08);
+    0 0 0 2px rgba(145, 47, 245, 0.28),
+    0 10px 24px rgba(15, 23, 42, 0.12);
 }
 
 .icon {
   color: #94a3b8;
   flex-shrink: 0;
+  transition: color 0.2s ease;
 }
 
 .form:focus-within .icon {
@@ -42,7 +42,7 @@
   background: transparent;
   color: #0f172a;
   font: inherit;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -59,7 +59,7 @@
   display: grid;
   place-items: center;
   border: 0;
-  padding: 0.15rem;
+  padding: 0.3rem;
   background: transparent;
   color: #94a3b8;
   cursor: pointer;
@@ -71,19 +71,27 @@
 
 .panel {
   position: absolute;
-  top: calc(100% + 0.45rem);
+  top: calc(100% + 0.5rem);
   right: 0;
   z-index: 200;
-  width: min(320px, 78vw);
+  width: min(360px, 82vw);
   padding: 0.45rem;
-  border-radius: 0.85rem;
+  border-radius: 12px;
   background: #ffffff;
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  border: 0;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.15rem 0.15rem 0.2rem;
 }
 
 .panelLabel {
-  padding: 0.35rem 0.55rem 0.45rem;
+  padding: 0.35rem 0.4rem 0.35rem 0.55rem;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -91,9 +99,40 @@
   color: #64748b;
 }
 
+.clearRecent {
+  border: 0;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.45rem;
+  background: transparent;
+  color: #912ff5;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clearRecent:hover {
+  background: rgba(145, 47, 245, 0.08);
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  border-radius: 0.55rem;
+}
+
+.itemRow:hover {
+  background: #f1f5f9;
+}
+
 .item {
-  display: block;
-  padding: 0.55rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.55rem 0.4rem 0.55rem 0.65rem;
   border-radius: 0.55rem;
   color: #0f172a !important;
   font-size: 0.9rem;
@@ -101,9 +140,61 @@
   text-decoration: none !important;
 }
 
-.item:hover {
-  background: #f1f5f9;
+.itemIcon {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.itemLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemRow:hover .item {
   color: #912ff5 !important;
+}
+
+.itemRow:hover .itemIcon {
+  color: #912ff5;
+}
+
+.removeItem {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 0.35rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.removeItem:hover {
+  background: rgba(148, 163, 184, 0.18);
+  color: #0f172a;
+}
+
+.emptyState {
+  padding: 0.85rem 0.75rem 0.95rem;
+}
+
+.emptyTitle {
+  margin: 0 0 0.35rem;
+  color: #0f172a;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.emptyText {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .srOnly {
@@ -120,8 +211,8 @@
 
 @media (max-width: 1200px) {
   .form {
-    width: min(200px, 22vw);
-    min-width: 150px;
+    width: min(250px, 28vw);
+    min-width: 180px;
   }
 }
 
