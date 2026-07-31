@@ -33,7 +33,7 @@ const categories = [
   {
     title: 'Leads',
     description: 'Capture and manage leads',
-    to: '/docs/leads-module/overview',
+    to: '/docs/Leads-Module/overview',
     Icon: UserPlus,
     tone: 'indigo',
   },
@@ -97,7 +97,7 @@ const recentUpdates = [
   },
   {
     title: 'Lead Conversion Process',
-    to: '/docs/leads-module/lead-conversion',
+    to: '/docs/Leads-Module/lead-conversion',
     when: '3 days ago',
     Icon: RefreshCw,
   },
