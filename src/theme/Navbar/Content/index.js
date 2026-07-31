@@ -13,6 +13,7 @@ import NavbarItem from '@theme/NavbarItem';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
+import NavbarDocSearch from '@site/src/components/NavbarDocSearch';
 
 import styles from './styles.module.css';
 
@@ -81,6 +82,7 @@ export default function NavbarContent() {
       }
       right={
         <>
+          <NavbarDocSearch />
           <NavbarItems items={rightItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
         </>

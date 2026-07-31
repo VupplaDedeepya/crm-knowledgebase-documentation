@@ -85,18 +85,6 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Introduction',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'onboardingSidebar',
-            position: 'left',
-            label: 'User Onboarding',
-          },
-          {
-            type: 'docSidebar',
             sidebarId: 'leadModuleSidebar',
             position: 'left',
             label: 'Leads',

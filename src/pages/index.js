@@ -7,111 +7,187 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {
   Search,
+  BookOpen,
   UserPlus,
-  Heart,
-  Users,
-  Building2,
-  Clock3,
-  Settings,
-  Network,
+  Compass,
+  Rocket,
+  BookMarked,
+  LayoutGrid,
+  MessageSquare,
   Zap,
-  Inbox,
-  RefreshCw,
+  Puzzle,
+  Settings,
+  Shield,
   FileText,
   ArrowRight,
-  History,
+  CircleHelp,
+  Wrench,
+  Headphones,
+  ScrollText,
   X,
 } from 'lucide-react';
 import {resolveSearch} from '@site/src/utils/docSearch';
+import HeroMapLottie from '@site/src/components/HeroMapLottie';
+import HeroRightLottie from '@site/src/components/HeroRightLottie';
 
 import styles from './index.module.css';
 
 const RECENT_SEARCHES_KEY = 'cx-astra-recent-searches';
 const MAX_RECENT_SEARCHES = 5;
 
-const categories = [
+const popularSearches = [
+  {label: 'Create a Lead', to: '/docs/Leads-Module/creating-leads'},
+  {label: 'Workflow Automation', to: '/docs/Automation/Workflows/Overview'},
+  {label: 'User Roles', to: '/docs/user-management/roles'},
+  {label: 'Pulse Settings', to: '/docs/Pulse-Settings/Overview'},
+  {label: 'Organization Settings', to: '/docs/Organization/Profile'},
+];
+
+const gettingStarted = [
   {
-    title: 'Leads',
-    description: 'Capture and manage leads',
-    to: '/docs/Leads-Module/overview',
-    Icon: UserPlus,
-    tone: 'indigo',
-  },
-  {
-    title: 'Deals',
-    description: 'Track and close deals',
-    to: '/docs/Deals-Module/overview',
-    Icon: Heart,
-    tone: 'rose',
-  },
-  {
-    title: 'Contacts',
-    description: 'Store customer details',
-    to: '/docs/Contacts-Module/overview',
-    Icon: Users,
-    tone: 'emerald',
-  },
-  {
-    title: 'Organizations',
-    description: 'Manage company accounts',
-    to: '/docs/Organizations-Module/overview',
-    Icon: Building2,
+    title: 'Introduction',
+    description: 'Learn what CX Astra is and how the CRM is structured.',
+    to: '/docs/intro',
+    Icon: BookOpen,
     tone: 'violet',
   },
   {
-    title: 'Activities',
-    description: 'Tasks, notes, and follow-ups',
-    to: '/docs/Activities-Module/activities',
-    Icon: Clock3,
-    tone: 'amber',
+    title: 'User Onboarding',
+    description: 'Get started with your account, profile, and first login.',
+    to: '/docs/onboarding',
+    Icon: UserPlus,
+    tone: 'blue',
   },
   {
-    title: 'Automation',
-    description: 'Workflows and sequences',
-    to: '/docs/Automation/Workflows/Overview',
-    Icon: Zap,
+    title: 'Navigation Guide',
+    description: 'Understand modules, menus, and how to move around the app.',
+    to: '/docs/intro',
+    Icon: Compass,
     tone: 'cyan',
   },
   {
-    title: 'Integrations',
-    description: 'Connect external tools',
-    to: '/docs/Integrations/Lead-Capture',
-    Icon: Network,
-    tone: 'sky',
+    title: 'First CRM Setup',
+    description: 'Configure organization basics before inviting your team.',
+    to: '/docs/profile-settings',
+    Icon: Rocket,
+    tone: 'amber',
   },
   {
-    title: 'Settings',
-    description: 'Configure your workspace',
+    title: 'CRM Terminology',
+    description: 'Key terms for leads, deals, contacts, and activities.',
+    to: '/docs/leads-module',
+    Icon: BookMarked,
+    tone: 'rose',
+  },
+];
+
+const exploreAreas = [
+  {
+    title: 'CRM Essentials',
+    description:
+      'Core guides for leads, deals, contacts, organizations, and daily sales work.',
+    to: '/docs/Leads-Module/overview',
+    Icon: LayoutGrid,
+    tone: 'violet',
+  },
+  {
+    title: 'Pulse AI',
+    description:
+      'Inbox, channels, knowledge base, and AI-assisted conversation workflows.',
+    to: '/docs/Pulse-Module/Pulse-Overview',
+    Icon: MessageSquare,
+    tone: 'blue',
+  },
+  {
+    title: 'Automation',
+    description:
+      'Workflows, sequences, and scoring to reduce manual follow-up work.',
+    to: '/docs/Automation/Workflows/Overview',
+    Icon: Zap,
+    tone: 'amber',
+  },
+  {
+    title: 'Integrations',
+    description:
+      'Connect lead capture, webhooks, and external tools to your CRM.',
+    to: '/docs/Integrations/Lead-Capture',
+    Icon: Puzzle,
+    tone: 'emerald',
+  },
+  {
+    title: 'Administration',
+    description:
+      'Manage users, roles, access, and organization-wide configuration.',
     to: '/docs/user-management/overview',
     Icon: Settings,
     tone: 'slate',
   },
+  {
+    title: 'Developer',
+    description:
+      'Technical setup notes for widgets, capture configs, and integrations.',
+    to: '/docs/Pulse-Settings/Channels/Widget-Setup',
+    Icon: Shield,
+    tone: 'indigo',
+  },
 ];
 
-const recentUpdates = [
+const popularGuides = [
+  {title: 'Creating Your First Lead', to: '/docs/Leads-Module/creating-leads'},
+  {title: 'Converting Lead to Deal', to: '/docs/Leads-Module/lead-conversion'},
+  {title: 'Managing Contacts', to: '/docs/Contacts-Module/overview'},
+  {title: 'Deal Pipeline Basics', to: '/docs/Deals-Module/overview'},
+  {title: 'Setting Up Workflows', to: '/docs/Automation/Workflows/Overview'},
+  {title: 'User Roles & Access', to: '/docs/user-management/roles'},
+];
+
+const whatsNew = [
   {
-    title: 'Pulse Inbox Overview',
+    title: 'Pulse Inbox Enhancements',
+    date: 'May 10, 2026',
     to: '/docs/Pulse-Module/Pulse-Overview',
-    when: '2 days ago',
-    Icon: Inbox,
   },
   {
-    title: 'Lead Conversion Process',
+    title: 'Improved Lead Conversion',
+    date: 'Apr 28, 2026',
     to: '/docs/Leads-Module/lead-conversion',
-    when: '3 days ago',
-    Icon: RefreshCw,
   },
   {
-    title: 'Creating Deals',
-    to: '/docs/Deals-Module/creating-deals',
-    when: '5 days ago',
-    Icon: Heart,
+    title: 'Workflow Action Updates',
+    date: 'Apr 12, 2026',
+    to: '/docs/Automation/Workflows/Overview',
   },
   {
-    title: 'User Onboarding Guide',
-    to: '/docs/onboarding',
-    when: '1 week ago',
-    Icon: FileText,
+    title: 'Organization Branding Guide',
+    date: 'Mar 30, 2026',
+    to: '/docs/Organization/Branding',
+  },
+];
+
+const helpLinks = [
+  {
+    title: 'FAQs',
+    description: 'Answers to common CRM questions.',
+    to: '/docs/Pulse-Settings/KnowledgeBase',
+    Icon: CircleHelp,
+  },
+  {
+    title: 'Troubleshooting',
+    description: 'Fix setup and integration issues.',
+    to: '/docs/Integrations/Lead-Capture',
+    Icon: Wrench,
+  },
+  {
+    title: 'Contact Support',
+    description: 'Reach the CX Astra support team.',
+    to: '/docs/Pulse-Settings/Overview',
+    Icon: Headphones,
+  },
+  {
+    title: 'Release Notes',
+    description: 'See recent product updates.',
+    to: '/docs/Pulse-Module/Pulse-Overview',
+    Icon: ScrollText,
   },
 ];
 
@@ -141,7 +217,6 @@ function addRecentSearch(entry) {
   if (!label) {
     return loadRecentSearches();
   }
-
   const next = [
     {label, to: entry.to},
     ...loadRecentSearches().filter(
@@ -149,75 +224,19 @@ function addRecentSearch(entry) {
         item.to !== entry.to && item.label.toLowerCase() !== label.toLowerCase(),
     ),
   ].slice(0, MAX_RECENT_SEARCHES);
-
   return persistRecentSearches(next);
-}
-
-function removeRecentSearch(label) {
-  const next = loadRecentSearches().filter(
-    (item) => item.label.toLowerCase() !== label.toLowerCase(),
-  );
-  return persistRecentSearches(next);
-}
-
-function clearRecentSearches() {
-  return persistRecentSearches([]);
-}
-
-function HeroVisual() {
-  return (
-    <div className={styles.heroVisual} aria-hidden="true">
-      <div className={styles.heroBlob} />
-      <div className={clsx(styles.mockWindow, styles.mockWindowMain)}>
-        <div className={styles.mockChrome}>
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={styles.mockBody}>
-          <div className={styles.mockSidebar} />
-          <div className={styles.mockContent}>
-            <div className={styles.mockLine} />
-            <div className={clsx(styles.mockLine, styles.mockLineShort)} />
-            <div className={styles.mockCards}>
-              <div className={styles.mockCard} />
-              <div className={styles.mockCard} />
-              <div className={styles.mockCard} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={clsx(styles.mockWindow, styles.mockWindowSmall)}>
-        <div className={styles.mockChrome}>
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={styles.mockMiniRows}>
-          <div className={styles.mockMiniRow} />
-          <div className={styles.mockMiniRow} />
-          <div className={styles.mockMiniRow} />
-        </div>
-      </div>
-    </div>
-  );
 }
 
 function HomepageHero() {
   const history = useHistory();
   const [query, setQuery] = useState('');
-  const [recentSearches, setRecentSearches] = useState([]);
 
-  useEffect(() => {
-    setRecentSearches(loadRecentSearches());
-  }, []);
-
-  const runSearch = (rawQuery) => {
-    const result = resolveSearch(rawQuery);
+  const runSearch = (rawQuery, destination) => {
+    const result = destination || resolveSearch(rawQuery);
     if (!result) {
       return;
     }
-    setRecentSearches(addRecentSearch(result));
+    addRecentSearch(result);
     history.push(result.to);
   };
 
@@ -226,132 +245,110 @@ function HomepageHero() {
     runSearch(query);
   };
 
-  const onRecentClick = (item) => {
-    setQuery(item.label);
-    setRecentSearches(addRecentSearch(item));
-  };
-
-  const onRemoveRecent = (event, label) => {
-    event.preventDefault();
-    event.stopPropagation();
-    setRecentSearches(removeRecentSearch(label));
-  };
-
-  const onClearRecent = () => {
-    setRecentSearches(clearRecentSearches());
-  };
-
   return (
-    <header className={styles.hero}>
-      <div className={styles.heroGrid}>
-        <div className={styles.heroCopy}>
-          <Heading as="h1" className={styles.heroTitle}>
-            Docs that power your CRM
-          </Heading>
-          <p className={styles.heroSubtitle}>
-            Clear guides. Practical steps. Better results. Everything you need to
-            master CX Astra.
-          </p>
-
-          <form className={styles.searchWrap} onSubmit={onSubmit} role="search">
-            <label className={styles.srOnly} htmlFor="docs-search">
-              Search documentation
-            </label>
-            <div className={styles.searchBar}>
-              <Search className={styles.searchIcon} size={20} strokeWidth={2.2} />
-              <input
-                id="docs-search"
-                className={styles.searchInput}
-                type="search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search documentation..."
-                autoComplete="off"
-              />
-              {query ? (
-                <button
-                  type="button"
-                  className={styles.searchClear}
-                  aria-label="Clear search"
-                  onClick={() => setQuery('')}
-                >
-                  <X size={18} strokeWidth={2.3} />
-                </button>
-              ) : null}
+    <header className={styles.heroFrame}>
+      <div className={styles.heroShell}>
+        <div className={styles.hero}>
+          <HeroMapLottie />
+          <HeroRightLottie />
+          <div className={styles.heroGlow} aria-hidden="true" />
+          <div className={styles.heroInner}>
+            <p className={styles.heroEyebrow}>Welcome to</p>
+            <div className={styles.heroTextBlock}>
+              <Heading as="h1" className={styles.heroTitle}>
+                CX Astra Documentation
+              </Heading>
+              <p className={styles.heroSubtitle}>
+                Your complete guide to understanding, configuring,
+                <br />
+                and getting the most out of CX Astra CRM.
+              </p>
             </div>
-          </form>
 
-          <div className={styles.popular}>
-            <div className={styles.popularHeader}>
-              <span className={styles.popularLabel}>Recent searches</span>
-              {recentSearches.length > 0 ? (
-                <button
-                  type="button"
-                  className={styles.clearRecent}
-                  onClick={onClearRecent}
-                >
-                  Clear
-                </button>
-              ) : null}
-            </div>
-            {recentSearches.length > 0 ? (
-              <div className={styles.popularTags}>
-                {recentSearches.map(({label, to}) => (
-                  <Link
-                    key={`${label}-${to}`}
-                    className={styles.popularTag}
-                    to={to}
-                    onClick={() => onRecentClick({label, to})}
+            <form className={styles.searchWrap} onSubmit={onSubmit} role="search">
+              <label className={styles.srOnly} htmlFor="docs-search">
+                Search documentation
+              </label>
+              <div className={styles.searchBar}>
+                <Search className={styles.searchIcon} size={20} strokeWidth={2.2} />
+                <input
+                  id="docs-search"
+                  className={styles.searchInput}
+                  type="search"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search for guides, modules, and more..."
+                  autoComplete="off"
+                />
+                {query ? (
+                  <button
+                    type="button"
+                    className={styles.searchClear}
+                    aria-label="Clear search"
+                    onClick={() => setQuery('')}
                   >
-                    <span className={styles.popularTagIcon}>
-                      <History size={13} strokeWidth={2.3} />
-                    </span>
-                    <span className={styles.popularTagLabel}>{label}</span>
-                    <button
-                      type="button"
-                      className={styles.removeRecent}
-                      aria-label={`Remove ${label} from recent searches`}
-                      onClick={(event) => onRemoveRecent(event, label)}
-                    >
-                      <X size={12} strokeWidth={2.4} />
-                    </button>
-                  </Link>
+                    <X size={18} strokeWidth={2.3} />
+                  </button>
+                ) : null}
+              </div>
+            </form>
+
+            <div className={styles.popular}>
+              <span className={styles.popularLabel}>Popular searches</span>
+              <div className={styles.popularTags}>
+                {popularSearches.map((item) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    className={styles.popularTag}
+                    onClick={() => runSearch(item.label, item)}
+                  >
+                    {item.label}
+                  </button>
                 ))}
               </div>
-            ) : (
-              <p className={styles.recentEmpty}>
-                Your recent searches will appear here.
-              </p>
-            )}
+            </div>
           </div>
         </div>
-        <HeroVisual />
       </div>
     </header>
   );
 }
 
-function CategoryGrid() {
+function GettingStarted() {
   return (
-    <section className={styles.categories} aria-labelledby="categories-heading">
-      <Heading as="h2" id="categories-heading" className={styles.sectionHeading}>
-        Browse by Category
-      </Heading>
-      <div className={styles.categoryGrid}>
-        {categories.map(({title, description, to, Icon, tone}, index) => (
+    <section className={styles.section} aria-labelledby="getting-started-heading">
+      <div className={styles.sectionHeader}>
+        <div>
+          <Heading as="h2" id="getting-started-heading" className={styles.sectionTitle}>
+            Getting Started
+          </Heading>
+          <p className={styles.sectionSubtitle}>
+            Start here if you are new to CX Astra.
+          </p>
+        </div>
+        <Link className={styles.sectionLink} to="/docs/intro">
+          View all guides
+          <ArrowRight size={15} strokeWidth={2.3} />
+        </Link>
+      </div>
+      <div className={styles.startGrid}>
+        {gettingStarted.map(({title, description, to, Icon, tone}) => (
           <Link
             key={title}
-            className={clsx(styles.categoryCard, styles[`tone_${tone}`])}
+            className={clsx(styles.startCard, styles[`tone_${tone}`])}
             to={to}
-            style={{animationDelay: `${0.08 + index * 0.05}s`}}
           >
-            <span className={styles.categoryIcon}>
-              <Icon size={20} strokeWidth={2.1} />
+            <span className={styles.startIcon}>
+              <Icon size={16} strokeWidth={2.1} />
             </span>
-            <Heading as="h3" className={styles.categoryTitle}>
+            <Heading as="h3" className={styles.startTitle}>
               {title}
             </Heading>
-            <p className={styles.categoryDescription}>{description}</p>
+            <p className={styles.startDescription}>{description}</p>
+            <span className={styles.startArrow} aria-hidden="true">
+              <ArrowRight size={14} strokeWidth={2.2} />
+            </span>
           </Link>
         ))}
       </div>
@@ -359,34 +356,174 @@ function CategoryGrid() {
   );
 }
 
-function RecentlyUpdated() {
+function ExploreByArea() {
   return (
-    <section className={styles.recent} aria-labelledby="recent-heading">
-      <div className={styles.recentHeader}>
-        <Heading as="h2" id="recent-heading" className={styles.sectionHeading}>
-          Recently Updated
-        </Heading>
-        <Link className={styles.viewAll} to="/docs/intro">
-          View all
-          <ArrowRight size={15} strokeWidth={2.2} />
-        </Link>
+    <section className={styles.section} aria-labelledby="explore-heading">
+      <div className={styles.sectionHeader}>
+        <div>
+          <Heading as="h2" id="explore-heading" className={styles.sectionTitle}>
+            Explore by area
+          </Heading>
+          <p className={styles.sectionSubtitle}>
+            Browse documentation by product area
+          </p>
+        </div>
       </div>
-      <ul className={styles.recentList}>
-        {recentUpdates.map(({title, to, when, Icon}, index) => (
-          <li key={title} style={{animationDelay: `${0.1 + index * 0.06}s`}}>
-            <Link className={styles.recentItem} to={to}>
-              <span className={styles.recentLeft}>
-                <span className={styles.recentIcon}>
-                  <Icon size={16} strokeWidth={2.1} />
-                </span>
-                <span className={styles.recentTitle}>{title}</span>
-              </span>
-              <span className={styles.recentWhen}>{when}</span>
+      <div className={styles.areaGrid}>
+        {exploreAreas.map(({title, description, to, Icon, tone}) => (
+          <article
+            key={title}
+            className={clsx(styles.areaCard, styles[`tone_${tone}`])}
+          >
+            <span className={styles.areaIcon}>
+              <Icon size={18} strokeWidth={2.1} />
+            </span>
+            <Heading as="h3" className={styles.areaTitle}>
+              {title}
+            </Heading>
+            <p className={styles.areaDescription}>{description}</p>
+            <Link className={styles.areaLink} to={to}>
+              Explore
+              <ArrowRight size={14} strokeWidth={2.3} />
             </Link>
-          </li>
+          </article>
         ))}
-      </ul>
+      </div>
     </section>
+  );
+}
+
+function InfoColumns() {
+  return (
+    <section className={styles.infoSection} aria-label="Guides and help">
+      <div className={styles.infoGrid}>
+        <div className={styles.infoCard}>
+          <Heading as="h3" className={styles.infoTitle}>
+            Popular guides
+          </Heading>
+          <ul className={styles.guideList}>
+            {popularGuides.map((item) => (
+              <li key={item.title}>
+                <Link className={styles.guideLink} to={item.to}>
+                  <FileText size={16} strokeWidth={2.1} />
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link className={styles.infoFooterLink} to="/docs/intro">
+            View all documentation
+            <ArrowRight size={14} strokeWidth={2.3} />
+          </Link>
+        </div>
+
+        <div className={styles.infoCard}>
+          <div className={styles.infoTitleRow}>
+            <Heading as="h3" className={styles.infoTitle}>
+              What&apos;s new
+            </Heading>
+            <Link className={styles.infoTopLink} to="/docs/Pulse-Module/Pulse-Overview">
+              View all updates
+              <ArrowRight size={13} strokeWidth={2.3} />
+            </Link>
+          </div>
+          <ul className={styles.newsList}>
+            {whatsNew.map((item) => (
+              <li key={item.title}>
+                <Link className={styles.newsItem} to={item.to}>
+                  <span className={styles.newBadge}>NEW</span>
+                  <span className={styles.newsCopy}>
+                    <span className={styles.newsTitle}>{item.title}</span>
+                    <span className={styles.newsDate}>{item.date}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={styles.infoCard}>
+          <Heading as="h3" className={styles.infoTitle}>
+            Need help?
+          </Heading>
+          <ul className={styles.helpList}>
+            {helpLinks.map(({title, description, to, Icon}) => (
+              <li key={title}>
+                <Link className={styles.helpItem} to={to}>
+                  <span className={styles.helpIcon}>
+                    <Icon size={18} strokeWidth={2.1} />
+                  </span>
+                  <span>
+                    <span className={styles.helpTitle}>{title}</span>
+                    <span className={styles.helpDescription}>{description}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeFooter() {
+  return (
+    <footer className={styles.homeFooter}>
+      <div className={styles.footerInner}>
+        <div className={styles.footerBrand}>
+          <p className={styles.footerBrandName}>CX Astra</p>
+          <p className={styles.footerBrandTag}>CRM Documentation Portal</p>
+          <p className={styles.footerCopy}>
+            © {new Date().getFullYear()} My Project, Inc. Built with Docusaurus.
+          </p>
+        </div>
+
+        <div className={styles.footerCol}>
+          <p className={styles.footerHeading}>Resources</p>
+          <Link to="/docs/intro">Documentation</Link>
+          <Link to="/docs/onboarding">Community</Link>
+          <Link to="/docs/leads-module">Glossary</Link>
+          <Link to="/docs/Pulse-Settings/Overview">System Status</Link>
+        </div>
+
+        <div className={styles.footerCol}>
+          <p className={styles.footerHeading}>Legal</p>
+          <Link to="/docs/intro">Privacy Policy</Link>
+          <Link to="/docs/intro">Terms of Service</Link>
+          <Link to="/docs/intro">Security</Link>
+          <Link to="/docs/intro">Trust Center</Link>
+        </div>
+
+        <div className={styles.footerCol}>
+          <p className={styles.footerHeading}>Connect</p>
+          <div className={styles.footerSocial}>
+            <span>LinkedIn</span>
+            <span>X</span>
+            <span>YouTube</span>
+            <span>GitHub</span>
+          </div>
+        </div>
+
+        <div className={styles.footerSubscribe}>
+          <p className={styles.footerHeading}>Stay updated</p>
+          <p className={styles.footerSubscribeText}>
+            Get product updates and documentation highlights.
+          </p>
+          <form
+            className={styles.subscribeForm}
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="Email address"
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -403,13 +540,17 @@ export default function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Clear guides. Practical steps. Better results. Everything you need to master CX Astra."
+      description="Your complete guide to understanding, configuring, and getting the most out of CX Astra CRM."
       wrapperClassName={styles.homeWrapper}
       noFooter>
       <main className={styles.home}>
         <HomepageHero />
-        <CategoryGrid />
-        <RecentlyUpdated />
+        <div className={styles.content}>
+          <GettingStarted />
+          <ExploreByArea />
+          <InfoColumns />
+        </div>
+        <HomeFooter />
       </main>
     </Layout>
   );
