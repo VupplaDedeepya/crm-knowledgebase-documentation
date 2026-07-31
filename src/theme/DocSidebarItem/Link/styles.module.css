@@ -1,0 +1,30 @@
+.sidebarItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebarIcon {
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #64748b;
+  transition: color 0.2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sidebarItem:hover .sidebarIcon {
+  color: #6366f1;
+}
+
+.sidebarItem:has(:global(.menu__link--active)) .sidebarIcon {
+  color: #6366f1;
+}
+
+.sidebarItem :global(.menu__link) {
+  padding-left: 0.15rem !important;
+}
