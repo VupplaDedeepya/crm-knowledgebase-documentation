@@ -340,7 +340,7 @@ function GettingStarted() {
             to={to}
           >
             <span className={styles.startIcon}>
-              <Icon size={16} strokeWidth={2.1} />
+              <Icon size={18} strokeWidth={2.1} />
             </span>
             <Heading as="h3" className={styles.startTitle}>
               {title}
@@ -376,7 +376,7 @@ function ExploreByArea() {
             className={clsx(styles.areaCard, styles[`tone_${tone}`])}
           >
             <span className={styles.areaIcon}>
-              <Icon size={18} strokeWidth={2.1} />
+              <Icon size={20} strokeWidth={2.1} />
             </span>
             <Heading as="h3" className={styles.areaTitle}>
               {title}
