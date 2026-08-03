@@ -11,12 +11,9 @@ import {
 } from '@docusaurus/theme-common/internal';
 import {useLocation} from '@docusaurus/router';
 import NavbarItem from '@theme/NavbarItem';
-import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarDocSearch from '@site/src/components/NavbarDocSearch';
-
-import styles from './styles.module.css';
 
 function useNavbarItems() {
   return useThemeConfig().navbar.items;
@@ -92,7 +89,6 @@ export default function NavbarContent() {
         <>
           {!isHomePage ? <NavbarDocSearch /> : null}
           <NavbarItems items={rightItems} />
-          <NavbarColorModeToggle className={styles.colorModeToggle} />
         </>
       }
     />

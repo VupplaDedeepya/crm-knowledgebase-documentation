@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {useHistory} from '@docusaurus/router';
@@ -6,12 +6,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {
-  Search,
   BookOpen,
   UserPlus,
   Compass,
   Rocket,
-  BookMarked,
   LayoutGrid,
   MessageSquare,
   Zap,
@@ -24,16 +22,14 @@ import {
   Wrench,
   Headphones,
   ScrollText,
-  X,
 } from 'lucide-react';
-import {resolveSearch} from '@site/src/utils/docSearch';
+import DocSearchBox, {
+  addRecentSearch,
+} from '@site/src/components/DocSearch/DocSearchBox';
 import HeroMapLottie from '@site/src/components/HeroMapLottie';
 import HeroRightLottie from '@site/src/components/HeroRightLottie';
 
 import styles from './index.module.css';
-
-const RECENT_SEARCHES_KEY = 'cx-astra-recent-searches';
-const MAX_RECENT_SEARCHES = 5;
 
 const popularSearches = [
   {label: 'Create a Lead', to: '/docs/Leads-Module/creating-leads'},
@@ -61,23 +57,16 @@ const gettingStarted = [
   {
     title: 'Navigation Guide',
     description: 'Understand modules, menus, and how to move around the app.',
-    to: '/docs/intro',
+    to: '/docs/navigation',
     Icon: Compass,
     tone: 'cyan',
   },
   {
-    title: 'First CRM Setup',
-    description: 'Configure organization basics before inviting your team.',
-    to: '/docs/profile-settings',
+    title: 'Configure Your CRM',
+    description: 'Set up organization, users, roles, and core CRM settings.',
+    to: '/docs/FirstCRMSetup',
     Icon: Rocket,
     tone: 'amber',
-  },
-  {
-    title: 'CRM Terminology',
-    description: 'Key terms for leads, deals, contacts, and activities.',
-    to: '/docs/leads-module',
-    Icon: BookMarked,
-    tone: 'rose',
   },
 ];
 
@@ -85,48 +74,48 @@ const exploreAreas = [
   {
     title: 'CRM Essentials',
     description:
-      'Core guides for leads, deals, contacts, organizations, and daily sales work.',
-    to: '/docs/Leads-Module/overview',
+      'Core guides for managing leads, deals, contacts, organizations, activities, and calendar within CX Astra.',
+    to: '/docs/crm-essentials',
     Icon: LayoutGrid,
     tone: 'violet',
   },
   {
-    title: 'Pulse AI',
+    title: 'Pulse',
     description:
-      'Inbox, channels, knowledge base, and AI-assisted conversation workflows.',
-    to: '/docs/Pulse-Module/Pulse-Overview',
+      'Configure Pulse Inbox, communication channels, Knowledge Base, support availability, users & access, assignment rules, and conversation management.',
+    to: '/docs/pulse',
     Icon: MessageSquare,
     tone: 'blue',
   },
   {
     title: 'Automation',
     description:
-      'Workflows, sequences, and scoring to reduce manual follow-up work.',
-    to: '/docs/Automation/Workflows/Overview',
+      'Configure workflows, sequences, assignment rules, and lead scoring to automate CRM processes.',
+    to: '/docs/automation',
     Icon: Zap,
     tone: 'amber',
   },
   {
-    title: 'Integrations',
+    title: 'Pulse Channel Integrations',
     description:
-      'Connect lead capture, webhooks, and external tools to your CRM.',
-    to: '/docs/Integrations/Lead-Capture',
+      'Connect CX Astra with external communication platforms and messaging channels.',
+    to: '/docs/integrations',
     Icon: Puzzle,
     tone: 'emerald',
   },
   {
     title: 'Administration',
     description:
-      'Manage users, roles, access, and organization-wide configuration.',
-    to: '/docs/user-management/overview',
+      'Manage organization settings, users, roles, teams, branding, localization, permissions, and CRM configuration.',
+    to: '/docs/administration',
     Icon: Settings,
     tone: 'slate',
   },
   {
-    title: 'Developer',
+    title: 'Developer Resources',
     description:
-      'Technical setup notes for widgets, capture configs, and integrations.',
-    to: '/docs/Pulse-Settings/Channels/Widget-Setup',
+      'Technical documentation for implementing CX Astra within websites and applications.',
+    to: '/docs/developer',
     Icon: Shield,
     tone: 'indigo',
   },
@@ -191,66 +180,15 @@ const helpLinks = [
   },
 ];
 
-function loadRecentSearches() {
-  if (typeof window === 'undefined') {
-    return [];
-  }
-  try {
-    const raw = window.localStorage.getItem(RECENT_SEARCHES_KEY);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
-function persistRecentSearches(items) {
-  if (typeof window === 'undefined') {
-    return items;
-  }
-  window.localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(items));
-  return items;
-}
-
-function addRecentSearch(entry) {
-  const label = entry.label.trim();
-  if (!label) {
-    return loadRecentSearches();
-  }
-  const next = [
-    {label, to: entry.to},
-    ...loadRecentSearches().filter(
-      (item) =>
-        item.to !== entry.to && item.label.toLowerCase() !== label.toLowerCase(),
-    ),
-  ].slice(0, MAX_RECENT_SEARCHES);
-  return persistRecentSearches(next);
-}
-
 function HomepageHero() {
   const history = useHistory();
-  const [query, setQuery] = useState('');
-  const [noResultMessage, setNoResultMessage] = useState('');
 
-  const runSearch = (rawQuery, destination) => {
-    const result = destination || resolveSearch(rawQuery);
-    if (!result) {
-      const trimmed = rawQuery.trim();
-      setNoResultMessage(
-        trimmed
-          ? `No docs found for “${trimmed}”. Try another CRM topic or keyword.`
-          : '',
-      );
+  const runPopularSearch = (item) => {
+    if (!item?.to) {
       return;
     }
-    setNoResultMessage('');
-    addRecentSearch(result);
-    history.push(result.to);
-  };
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    runSearch(query);
+    addRecentSearch(item);
+    history.push(item.to);
   };
 
   return (
@@ -273,44 +211,9 @@ function HomepageHero() {
               </p>
             </div>
 
-            <form className={styles.searchWrap} onSubmit={onSubmit} role="search">
-              <label className={styles.srOnly} htmlFor="docs-search">
-                Search documentation
-              </label>
-              <div className={styles.searchBar}>
-                <Search className={styles.searchIcon} size={20} strokeWidth={2.2} />
-                <input
-                  id="docs-search"
-                  className={styles.searchInput}
-                  type="search"
-                  value={query}
-                  onChange={(event) => {
-                    setQuery(event.target.value);
-                    setNoResultMessage('');
-                  }}
-                  placeholder="Search for guides, modules, and more..."
-                  autoComplete="off"
-                />
-                {query ? (
-                  <button
-                    type="button"
-                    className={styles.searchClear}
-                    aria-label="Clear search"
-                    onClick={() => {
-                      setQuery('');
-                      setNoResultMessage('');
-                    }}
-                  >
-                    <X size={18} strokeWidth={2.3} />
-                  </button>
-                ) : null}
-              </div>
-              {noResultMessage ? (
-                <p className={styles.searchEmpty} role="status">
-                  {noResultMessage}
-                </p>
-              ) : null}
-            </form>
+            <div className={styles.searchWrap}>
+              <DocSearchBox id="docs-search" variant="hero" />
+            </div>
 
             <div className={styles.popular}>
               <span className={styles.popularLabel}>Popular searches</span>
@@ -320,7 +223,7 @@ function HomepageHero() {
                     key={item.label}
                     type="button"
                     className={styles.popularTag}
-                    onClick={() => runSearch(item.label, item)}
+                    onClick={() => runPopularSearch(item)}
                   >
                     {item.label}
                   </button>
@@ -346,7 +249,7 @@ function GettingStarted() {
             Start here if you are new to CX Astra.
           </p>
         </div>
-        <Link className={styles.sectionLink} to="/docs/intro">
+        <Link className={styles.sectionLink} to="/guides">
           View all guides
           <ArrowRight size={15} strokeWidth={2.3} />
         </Link>
@@ -381,18 +284,19 @@ function ExploreByArea() {
       <div className={styles.sectionHeader}>
         <div>
           <Heading as="h2" id="explore-heading" className={styles.sectionTitle}>
-            Explore by area
+            Explore by Area
           </Heading>
           <p className={styles.sectionSubtitle}>
-            Browse documentation by product area
+            Browse documentation by product area.
           </p>
         </div>
       </div>
       <div className={styles.areaGrid}>
         {exploreAreas.map(({title, description, to, Icon, tone}) => (
-          <article
+          <Link
             key={title}
             className={clsx(styles.areaCard, styles[`tone_${tone}`])}
+            to={to}
           >
             <span className={styles.areaIcon}>
               <Icon size={20} strokeWidth={2.1} />
@@ -401,11 +305,11 @@ function ExploreByArea() {
               {title}
             </Heading>
             <p className={styles.areaDescription}>{description}</p>
-            <Link className={styles.areaLink} to={to}>
+            <span className={styles.areaLink}>
               Explore
               <ArrowRight size={14} strokeWidth={2.3} />
-            </Link>
-          </article>
+            </span>
+          </Link>
         ))}
       </div>
     </section>
@@ -430,7 +334,7 @@ function InfoColumns() {
               </li>
             ))}
           </ul>
-          <Link className={styles.infoFooterLink} to="/docs/intro">
+          <Link className={styles.infoFooterLink} to="/guides">
             View all documentation
             <ArrowRight size={14} strokeWidth={2.3} />
           </Link>

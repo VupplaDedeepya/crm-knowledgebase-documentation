@@ -13,7 +13,15 @@ const sidebars = {
 
   onboardingSidebar: [
     'onboarding',
-    'profile-settings'
+    'navigation',
+    'FirstCRMSetup',
+    'profile-settings',
+    'crm-essentials',
+    'pulse',
+    'automation',
+    'integrations',
+    'administration',
+    'developer',
   ],
   leadModuleSidebar: [
     {

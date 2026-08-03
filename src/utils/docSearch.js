@@ -1,41 +1,10 @@
-const STOP_WORDS = new Set([
-  'a',
-  'an',
-  'the',
-  'to',
-  'how',
-  'do',
-  'i',
-  'can',
-  'does',
-  'what',
-  'is',
-  'are',
-  'for',
-  'in',
-  'of',
-  'on',
-  'my',
-  'me',
-  'please',
-  'help',
-  'with',
-  'from',
-  'into',
-  'and',
-  'or',
-  'about',
-  'guide',
-  'docs',
-  'documentation',
-  'page',
-  'module',
-]);
-
 /**
  * Intent-aware documentation index covering all navbar modules.
- * Action + entity queries prefer specific pages over overviews.
+ * Add new pages here with title/label, path/to, keywords, aliases, and intents.
+ * See src/utils/search/ARCHITECTURE.md for the full schema.
  */
+import {createSearchEngine} from './search/engine';
+
 export const DOC_INDEX = [
   // ---------- Introduction ----------
   {
@@ -100,12 +69,63 @@ export const DOC_INDEX = [
     ],
   },
   {
+    label: 'Navigation Guide',
+    to: '/docs/navigation',
+    kind: 'definition',
+    entities: ['navigation', 'menu', 'sidebar', 'navbar', 'workspace'],
+    actions: ['navigate', 'move', 'find', 'open', 'understand'],
+    keywords: [
+      'left navigation',
+      'top navigation',
+      'module workspace',
+      'how to navigate',
+      'crm navigation',
+    ],
+    phrases: [
+      'navigation guide',
+      'how to navigate',
+      'crm menu',
+      'sidebar navigation',
+      'move around the app',
+    ],
+  },
+  {
     label: 'Profile Settings',
     to: '/docs/profile-settings',
     kind: 'configure',
     entities: ['profile', 'password', 'signature', 'calendar'],
     actions: ['change', 'update', 'configure', 'setup'],
     phrases: ['profile settings', 'change password', 'email signature'],
+  },
+  {
+    label: 'Configure Your CRM',
+    to: '/docs/FirstCRMSetup',
+    kind: 'configure',
+    module: 'Getting Started',
+    category: 'Setup',
+    entities: ['setup', 'configuration', 'organization', 'crm'],
+    actions: ['configure', 'setup', 'start'],
+    keywords: [
+      'first crm setup',
+      'configure crm',
+      'organization settings',
+      'initial setup',
+    ],
+    aliases: ['first crm setup', 'crm setup', 'initial configuration'],
+    intents: [
+      'configure your crm',
+      'first crm setup',
+      'setup crm',
+      'configure organization',
+    ],
+    phrases: [
+      'configure your crm',
+      'first crm setup',
+      'crm setup guide',
+      'initial crm configuration',
+    ],
+    description:
+      'Recommended setup sequence for organization, users, roles, CRM, and Pulse settings.',
   },
 
   // ---------- Leads ----------
@@ -375,8 +395,20 @@ export const DOC_INDEX = [
   {
     label: 'Creating Contacts',
     to: '/docs/Contacts-Module/creating-contacts',
+    kind: 'howto',
     entities: ['contact', 'contacts'],
-    actions: ['create', 'creating', 'add', 'adding', 'new'],
+    actions: ['create', 'creating', 'add', 'adding', 'new', 'import', 'upload'],
+    keywords: ['contact', 'contacts', 'customer', 'import'],
+    aliases: ['import contacts', 'add contacts'],
+    intents: [
+      'create contact',
+      'add contact',
+      'new contact',
+      'import contacts',
+      'import contact',
+      'upload contacts',
+      'how to import contacts',
+    ],
     phrases: [
       'create a contact',
       'create contact',
@@ -384,7 +416,25 @@ export const DOC_INDEX = [
       'how to create contact',
       'add contact',
       'new contact',
+      'import contacts',
     ],
+  },
+  {
+    label: 'Import Contacts',
+    to: '/docs/Contacts-Module/creating-contacts',
+    kind: 'howto',
+    entities: ['contact', 'contacts'],
+    actions: ['import', 'upload'],
+    keywords: ['import', 'contacts', 'csv', 'upload'],
+    aliases: ['bulk import contacts', 'upload contacts'],
+    intents: [
+      'import contacts',
+      'import contact',
+      'upload contacts',
+      'how do i import contacts',
+      'how to import contacts',
+    ],
+    phrases: ['import contacts', 'upload contacts'],
   },
   {
     label: 'Contact Details',
@@ -669,18 +719,48 @@ export const DOC_INDEX = [
     phrases: ['assignment rules', 'pulse assignment'],
   },
   {
-    label: 'Pulse Knowledge Base',
+    label: 'Knowledge Base',
     to: '/docs/Pulse-Settings/KnowledgeBase',
+    kind: 'configure',
+    module: 'Pulse AI',
+    category: 'Knowledge Base',
     entities: ['knowledge', 'knowledgebase', 'kb'],
-    actions: ['setup', 'configure', 'add'],
-    phrases: ['pulse knowledge base', 'knowledge base'],
+    actions: ['setup', 'configure', 'add', 'upload', 'create'],
+    keywords: ['knowledge base', 'kb', 'articles', 'documents', 'chatbot'],
+    aliases: ['pulse knowledge base', 'kb documents'],
+    intents: [
+      'upload knowledge base',
+      'upload knowledge base documents',
+      'add knowledge base',
+      'configure knowledge base',
+      'knowledge base documents',
+      'how can i upload knowledge base documents',
+    ],
+    phrases: ['pulse knowledge base', 'knowledge base', 'upload knowledge base'],
+    description:
+      'Upload and manage Knowledge Base documents used by Pulse AI chatbot responses.',
+    readingTime: '6 min',
   },
   {
-    label: 'Support Availability',
+    label: 'Business Hours',
     to: '/docs/Pulse-Settings/SupportAvailability',
+    kind: 'configure',
+    module: 'Pulse AI',
+    category: 'Support Availability',
     entities: ['support', 'availability', 'business hours', 'holiday'],
-    actions: ['configure', 'setup'],
+    actions: ['configure', 'setup', 'edit', 'change'],
+    keywords: ['business hours', 'support hours', 'availability', 'after hours'],
+    aliases: ['support availability', 'after hours'],
+    intents: [
+      'configure business hours',
+      'change business hours',
+      'where do i configure business hours',
+      'set business hours',
+      'business hours settings',
+    ],
     phrases: ['support availability', 'business hours', 'after hours'],
+    description: 'Configure business hours and support availability for Pulse channels.',
+    readingTime: '4 min',
   },
   {
     label: 'Pulse Users and Access',
@@ -707,12 +787,32 @@ export const DOC_INDEX = [
     phrases: ['user management', 'manage users overview', 'what is user management'],
   },
   {
-    label: 'Manage Users',
+    label: 'Users',
     to: '/docs/user-management/users',
     kind: 'howto',
+    module: 'Administration',
+    category: 'User Management',
     entities: ['user', 'users', 'member', 'members', 'teammate', 'teammates'],
     actions: ['create', 'add', 'invite', 'inviting', 'manage', 'onboard'],
-    keywords: ['invitation', 'resend', 'deactivate', 'workspace users', 'email address'],
+    keywords: [
+      'user',
+      'users',
+      'invitation',
+      'team member',
+      'workspace users',
+      'email address',
+    ],
+    aliases: ['manage users', 'invite users', 'team members'],
+    intents: [
+      'invite user',
+      'invite users',
+      'add user',
+      'create user',
+      'how can i invite a user',
+      'how to invite user',
+      'manage users',
+      'onboard users',
+    ],
     phrases: [
       'create user',
       'add user',
@@ -728,20 +828,42 @@ export const DOC_INDEX = [
       'invite teammate',
       'onboard users',
     ],
+    description: 'Invite teammates, manage workspace users, and control account access.',
+    readingTime: '5 min',
   },
   {
     label: 'Roles',
     to: '/docs/user-management/roles',
     kind: 'configure',
+    module: 'Administration',
+    category: 'User Management',
     entities: ['role', 'roles', 'permission', 'permissions'],
-    actions: ['create', 'add', 'manage', 'configure'],
+    actions: ['create', 'add', 'manage', 'configure', 'edit'],
+    keywords: ['role', 'roles', 'permission', 'permissions', 'rbac', 'access'],
+    aliases: ['user roles', 'role management', 'permissions'],
+    intents: [
+      'create role',
+      'add role',
+      'add a new role',
+      'edit role',
+      'manage role',
+      'role settings',
+      'configure role',
+      'change permissions',
+      'assign permissions',
+      'how do i add a new role',
+    ],
     phrases: [
       'create role',
+      'add role',
       'manage roles',
       'user roles',
       'what are roles',
       'how to create a role',
+      'how do i add a new role',
     ],
+    description: 'Configure user Roles and Permissions for role-based access control.',
+    readingTime: '7 min',
   },
   {
     label: 'Access and Sharing',
@@ -767,8 +889,11 @@ export const DOC_INDEX = [
   {
     label: 'Work Schedule',
     to: '/docs/Organization/WorkSchedule',
-    entities: ['work schedule', 'business hours', 'holiday', 'holidays'],
+    entities: ['work schedule', 'holiday', 'holidays'],
     actions: ['configure', 'setup'],
+    keywords: ['work schedule', 'organization holidays'],
+    aliases: ['organization work schedule'],
+    intents: ['configure work schedule', 'organization holidays'],
     phrases: ['work schedule', 'organization holidays'],
   },
   {
@@ -793,11 +918,33 @@ export const DOC_INDEX = [
     phrases: ['configure leads', 'lead scoring settings'],
   },
   {
-    label: 'Configure Deals',
+    label: 'Deal Pipelines',
     to: '/docs/Configure/Deals',
+    kind: 'configure',
+    module: 'Administration',
+    category: 'Configure',
     entities: ['deal', 'deals', 'pipeline', 'stage'],
-    actions: ['configure', 'setup', 'create'],
-    phrases: ['configure deals', 'create pipeline', 'deal settings'],
+    actions: ['configure', 'setup', 'create', 'edit', 'change'],
+    keywords: ['pipeline', 'pipelines', 'stages', 'deal pipeline'],
+    aliases: ['configure deals', 'pipeline stages', 'deal stages'],
+    intents: [
+      'change pipeline stages',
+      'edit pipeline stages',
+      'configure deal pipelines',
+      'create pipeline',
+      'deal pipelines',
+      'i want to change pipeline stages',
+    ],
+    phrases: [
+      'configure deals',
+      'create pipeline',
+      'deal settings',
+      'deal pipelines',
+      'pipeline stages',
+      'change pipeline stages',
+    ],
+    description: 'Define deal pipelines and stages for your sales process.',
+    readingTime: '5 min',
   },
   {
     label: 'Tags',
@@ -909,84 +1056,31 @@ export const DOC_INDEX = [
   },
 ];
 
-const ACTION_INTENTS = [
-  'create',
-  'creating',
-  'add',
-  'adding',
-  'new',
-  'convert',
-  'converting',
-  'export',
-  'search',
-  'filter',
-  'filters',
-  'delete',
-  'archive',
-  'send',
-  'upload',
-  'schedule',
-  'configure',
-  'setup',
-  'invite',
-  'inviting',
-  'manage',
-  'update',
-  'edit',
-  'install',
-  'connect',
-  'automate',
-];
+const engine = createSearchEngine(DOC_INDEX);
 
-const DEFINITION_PATTERNS = [
-  /^what\s+(is|are)\b/,
-  /^what'?s\b/,
-  /^who\s+(is|are)\b/,
-  /^explain\b/,
-  /^define\b/,
-  /^meaning\s+of\b/,
-  /^tell\s+me\s+about\b/,
-  /^about\b/,
-];
+export const searchDocs = engine.searchDocs;
+export const resolveSearch = engine.resolveSearch;
+export const suggestSearches = engine.suggestSearches;
+export const getPopularSearches = engine.getPopularSearches;
+export const preprocessQuery = engine.preprocessQuery;
+export const clearSearchCache = engine.clearSearchCache;
 
-const HOWTO_PATTERNS = [
-  /^how\s+(to|do|can|should)\b/,
-  /^how\s+do\s+i\b/,
-  /^steps?\s+to\b/,
-  /^way\s+to\b/,
-  /\bhow\s+to\b/,
-];
-
-function singularize(token) {
-  if (token.endsWith('ies') && token.length > 4) {
-    return `${token.slice(0, -3)}y`;
-  }
-  if (token.endsWith('ses') || token.endsWith('xes') || token.endsWith('zes')) {
-    return token.slice(0, -2);
-  }
-  if (token.endsWith('s') && !token.endsWith('ss') && token.length > 3) {
-    return token.slice(0, -1);
-  }
-  return token;
+/** @deprecated Prefer preprocessQuery().normalized */
+export function normalizeQuery(query) {
+  return preprocessQuery(query).normalized;
 }
 
-function expandTokens(tokens) {
-  const expanded = new Set(tokens);
-  for (const token of tokens) {
-    expanded.add(singularize(token));
-    if (!token.endsWith('s')) {
-      expanded.add(`${token}s`);
-    }
-  }
-  return [...expanded];
+/** @deprecated Prefer preprocessQuery().tokens */
+export function tokenize(query) {
+  return preprocessQuery(query).tokens;
 }
 
 export function detectIntent(query) {
-  const normalized = normalizeQuery(query);
-  if (DEFINITION_PATTERNS.some((pattern) => pattern.test(normalized))) {
+  const normalized = String(query || '').toLowerCase().trim();
+  if (/^what\s+(is|are)\b|^explain\b|^define\b|^about\b/.test(normalized)) {
     return 'definition';
   }
-  if (HOWTO_PATTERNS.some((pattern) => pattern.test(normalized))) {
+  if (/^how\s+(to|do|can|should)\b|\bhow\s+to\b/.test(normalized)) {
     return 'howto';
   }
   if (/\b(settings?|configure|configuration|setup)\b/.test(normalized)) {
@@ -995,168 +1089,3 @@ export function detectIntent(query) {
   return 'general';
 }
 
-export function normalizeQuery(query) {
-  return query
-    .toLowerCase()
-    .replace(/[^\w\s']/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-export function tokenize(query) {
-  return normalizeQuery(query)
-    .split(' ')
-    .filter((word) => word && !STOP_WORDS.has(word));
-}
-
-function includesTerm(haystack, term) {
-  if (!term) {
-    return false;
-  }
-  if (term.includes(' ')) {
-    return haystack.includes(term);
-  }
-  return (
-    haystack.split(' ').includes(term) ||
-    haystack.includes(` ${term} `) ||
-    haystack.startsWith(`${term} `) ||
-    haystack.endsWith(` ${term}`)
-  );
-}
-
-function scoreDoc(doc, normalizedQuery, tokens, intent) {
-  let score = 0;
-  const expanded = expandTokens(tokens);
-  const labelNormalized = normalizeQuery(doc.label);
-  const searchable = [
-    doc.label,
-    ...(doc.entities || []),
-    ...(doc.actions || []),
-    ...(doc.keywords || []),
-    ...(doc.phrases || []),
-  ]
-    .join(' ')
-    .toLowerCase();
-
-  for (const phrase of doc.phrases || []) {
-    if (normalizedQuery.includes(phrase)) {
-      score += 120;
-    }
-  }
-
-  const matchedEntities = (doc.entities || []).filter(
-    (entity) =>
-      expanded.includes(entity) ||
-      includesTerm(normalizedQuery, entity) ||
-      tokens.some((token) => singularize(token) === singularize(entity)),
-  );
-  const matchedActions = (doc.actions || []).filter(
-    (action) =>
-      expanded.includes(action) ||
-      includesTerm(normalizedQuery, action) ||
-      tokens.some((token) => singularize(token) === singularize(action)),
-  );
-  const matchedKeywords = (doc.keywords || []).filter((keyword) =>
-    includesTerm(normalizedQuery, keyword) ||
-    expanded.some((token) => includesTerm(keyword, token)),
-  );
-
-  if (matchedEntities.length) {
-    score += 25 * matchedEntities.length;
-  }
-  if (matchedActions.length) {
-    score += 40 * matchedActions.length;
-  }
-  if (matchedKeywords.length) {
-    score += 18 * matchedKeywords.length;
-  }
-  if (matchedEntities.length && matchedActions.length) {
-    score += 55;
-  }
-
-  // Label token overlap (e.g. "user roles" → Roles)
-  for (const token of expanded) {
-    if (labelNormalized.includes(token) && token.length > 2) {
-      score += 12;
-    }
-  }
-
-  // Soft keyword bag match
-  for (const token of expanded) {
-    if (token.length > 2 && searchable.includes(token)) {
-      score += 4;
-    }
-  }
-
-  const isOverview =
-    doc.kind === 'definition' ||
-    /overview|intro|introduction|what is/i.test(doc.label) ||
-    /\/overview$/i.test(doc.to);
-
-  if (intent === 'definition') {
-    if (isOverview && matchedEntities.length) {
-      score += 90;
-    }
-    if (doc.kind === 'howto' && matchedActions.length === 0) {
-      score -= 35;
-    }
-    if (matchedActions.some((action) => ACTION_INTENTS.includes(action))) {
-      score -= 20;
-    }
-  }
-
-  if (intent === 'howto') {
-    if (doc.kind === 'howto' && matchedEntities.length && matchedActions.length) {
-      score += 70;
-    }
-    if (isOverview && matchedActions.some((action) => ACTION_INTENTS.includes(action))) {
-      score -= 45;
-    }
-  }
-
-  if (intent === 'configure') {
-    if (doc.kind === 'configure') {
-      score += 40;
-    }
-  }
-
-  if (matchedEntities.length && !matchedActions.length && isOverview) {
-    score += 20;
-  }
-
-  return score;
-}
-
-const MIN_MATCH_SCORE = 20;
-
-function rankDocs(query) {
-  const trimmed = query.trim();
-  if (!trimmed) {
-    return [];
-  }
-
-  const normalizedQuery = normalizeQuery(trimmed);
-  const tokens = tokenize(trimmed);
-  const intent = detectIntent(trimmed);
-
-  return DOC_INDEX.map((doc) => ({
-    ...doc,
-    score: scoreDoc(doc, normalizedQuery, tokens, intent),
-  }))
-    .filter((doc) => doc.score >= MIN_MATCH_SCORE)
-    .sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
-}
-
-export function resolveSearch(query) {
-  const ranked = rankDocs(query);
-  if (!ranked.length) {
-    return null;
-  }
-  return {label: ranked[0].label, to: ranked[0].to};
-}
-
-export function suggestSearches(query, limit = 6) {
-  return rankDocs(query)
-    .slice(0, limit)
-    .map(({label, to, score}) => ({label, to, score}));
-}

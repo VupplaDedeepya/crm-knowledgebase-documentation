@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "index:docs": "node scripts/buildDocSearchIndex.mjs",
+    "prestart": "npm run index:docs",
     "start": "docusaurus start",
+    "prebuild": "npm run index:docs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
