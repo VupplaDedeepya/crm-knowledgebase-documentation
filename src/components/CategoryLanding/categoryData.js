@@ -112,7 +112,7 @@ export const CATEGORY_PAGES = {
       {
         title: 'Channels',
         description: 'Connect and manage communication channels.',
-        to: '/docs/Pulse-Settings/Channels/Channels',
+        to: '/docs/Pulse-Settings/Channels',
         Icon: Radio,
         tone: 'cyan',
       },
@@ -154,7 +154,7 @@ export const CATEGORY_PAGES = {
     ],
     learningPath: [
       {title: 'Pulse Inbox', to: '/docs/Pulse-Module/Pulse-Overview'},
-      {title: 'Channels', to: '/docs/Pulse-Settings/Channels/Channels'},
+      {title: 'Channels', to: '/docs/Pulse-Settings/Channels'},
       {title: 'Users & Access', to: '/docs/Pulse-Settings/Users&Access'},
       {title: 'Assignment Rules', to: '/docs/Pulse-Settings/AssignmentRules'},
       {title: 'Knowledge Base', to: '/docs/Pulse-Settings/KnowledgeBase'},

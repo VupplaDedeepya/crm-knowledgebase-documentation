@@ -98,6 +98,14 @@ function extractHeadings(text) {
 function fileToDocPath(filePath) {
   const rel = path.relative(DOCS_DIR, filePath).replace(/\\/g, '/');
   const withoutExt = rel.replace(/\.mdx?$/i, '');
+  const parts = withoutExt.split('/');
+  // Docusaurus category-index convention: Folder/Folder.md → /docs/.../Folder
+  if (
+    parts.length >= 2 &&
+    parts[parts.length - 1].toLowerCase() === parts[parts.length - 2].toLowerCase()
+  ) {
+    return `/docs/${parts.slice(0, -1).join('/')}`;
+  }
   return `/docs/${withoutExt}`;
 }
 

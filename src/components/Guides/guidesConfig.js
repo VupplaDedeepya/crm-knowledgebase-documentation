@@ -71,7 +71,7 @@ export const GUIDE_CATEGORIES = [
     guideCount: 10,
     highlights: [
       {label: 'Pulse Inbox', to: '/docs/Pulse-Module/Pulse-Overview'},
-      {label: 'Channels', to: '/docs/Pulse-Settings/Channels/Channels'},
+      {label: 'Channels', to: '/docs/Pulse-Settings/Channels'},
       {label: 'Knowledge Base', to: '/docs/Pulse-Settings/KnowledgeBase'},
       {label: 'Business Hours', to: '/docs/Pulse-Settings/SupportAvailability'},
     ],

@@ -677,7 +677,7 @@ export const DOC_INDEX = [
   },
   {
     label: 'Pulse Channels',
-    to: '/docs/Pulse-Settings/Channels/Channels',
+    to: '/docs/Pulse-Settings/Channels',
     kind: 'configure',
     entities: ['pulse', 'channel', 'channels', 'whatsapp', 'instagram', 'messenger'],
     actions: ['setup', 'configure', 'add', 'open', 'view'],

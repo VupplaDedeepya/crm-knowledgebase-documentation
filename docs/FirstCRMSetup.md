@@ -179,7 +179,7 @@ Pulse Settings allow administrators to configure how the customer engagement pla
 
 The Pulse Settings module consists of:
 
-- [Channels](/docs/Pulse-Settings/Channels/Channels)
+- [Channels](/docs/Pulse-Settings/Channels)
 - [Users & Access](/docs/Pulse-Settings/Users&Access)
 - [Assignment Rules](/docs/Pulse-Settings/AssignmentRules)
 - [Knowledge Base](/docs/Pulse-Settings/KnowledgeBase)
