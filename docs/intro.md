@@ -3,6 +3,9 @@ sidebar_position: 1
 title: Introduction to Sales Astra CRM
 description: Learn about Sales Astra CRM and workspace management
 keywords: [CRM, introduction, workspace]
+displayed_sidebar: null
+pagination_prev: null
+pagination_next: null
 ---
 
 ## Welcome to Sales Astra CRM

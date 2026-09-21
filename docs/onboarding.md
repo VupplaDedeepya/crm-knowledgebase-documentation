@@ -3,6 +3,9 @@ sidebar_position: 2
 title: User Onboarding
 description: Complete user onboarding and registration process for Sales Astra CRM
 keywords: [onboarding, registration, setup]
+displayed_sidebar: null
+pagination_prev: null
+pagination_next: null
 ---
 
 ## Onboarding Overview

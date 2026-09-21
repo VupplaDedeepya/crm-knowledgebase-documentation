@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 title: Bulk Actions
 description: Learn how to perform actions on multiple Lead records simultaneously.
 ---

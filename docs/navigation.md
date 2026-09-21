@@ -1,6 +1,9 @@
 ---
 title: Navigation Guide
 sidebar_position: 3
+displayed_sidebar: null
+pagination_prev: null
+pagination_next: null
 ---
 
 # Navigation Guide
@@ -17,9 +20,6 @@ The CX Astra CRM interface consists of the following navigation areas:
 
 - Left Navigation Sidebar
 - Top Navigation Bar
-- Workspace Search
-- User Profile Menu
-- Module Workspace
 
 Each section is designed to help users quickly access CRM features without leaving the current workspace.
 
@@ -84,11 +84,14 @@ Similarly, every CRM module contains its own navigation structure based on the a
 
 The top navigation bar provides quick access to global CRM features that are available from anywhere in the application.
 
+![top-navigation-bar](/img/navigation/top-nav.png)
+
 These include:
 
 - Global Search
 - Create
 - AI Assistant
+- Pulse Inbox
 - Notifications
 - Settings
 - User Profile
@@ -123,7 +126,6 @@ Depending on user permissions, users can create records such as:
 - Deal
 - Contact
 - Organization
-- Activity
 
 This enables users to add new records from anywhere within the CRM.
 
@@ -142,6 +144,14 @@ Users can ask questions related to:
 - General CRM workflows
 
 Astra ai  helps users resolve questions without leaving the application.
+
+---
+
+## Pulse Inbox
+
+The Pulse Inbox icon provides quick access to customer conversations managed through the Pulse communication module.
+
+Selecting this icon opens the Pulse Inbox for managing conversations.
 
 ---
 

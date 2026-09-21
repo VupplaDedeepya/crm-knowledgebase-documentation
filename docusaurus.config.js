@@ -79,59 +79,10 @@ const config = {
       navbar: {
         title: 'CX Astra',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'CX Astra Logo',
           src: 'img/logo.svg',
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'leadModuleSidebar',
-            position: 'left',
-            label: 'Leads',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'dealModuleSidebar',
-            position: 'left',
-            label: 'Deals',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'contactModuleSidebar',
-            position: 'left',
-            label: 'Contacts',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'organizationModuleSidebar',
-            position: 'left',
-            label: 'Organizations',
-          },
-          {
-            type: 'doc',
-            docId: 'Activities-Module/activities',
-            position: 'left',
-            label: 'Activities',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'CalendarSidebar',
-            position: 'left',
-            label: 'Calendar',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'PulseInboxSidebar',
-            position: 'left',
-            label: 'Pulse Inbox',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'settingsSidebar',
-            position: 'left',
-            label: 'Settings',
-          },
-        ],
+        items: [],
       },
       footer: {
         style: 'dark',

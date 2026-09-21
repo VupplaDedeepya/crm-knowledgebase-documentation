@@ -406,7 +406,7 @@ function HomeFooter() {
           <p className={styles.footerHeading}>Resources</p>
           <Link to="/docs/intro">Documentation</Link>
           <Link to="/docs/onboarding">Community</Link>
-          <Link to="/docs/leads-module">Glossary</Link>
+          <Link to="/docs/crm-essentials">Glossary</Link>
           <Link to="/docs/Pulse-Settings/Overview">System Status</Link>
         </div>
 

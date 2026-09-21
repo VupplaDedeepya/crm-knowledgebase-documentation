@@ -23,20 +23,6 @@ Creating lead records allows your organization to:
 
 ---
 
-### Before You Begin
-
-Before creating a lead, ensure that:
-
-- You have permission to create Lead records.
-- Required fields are available based on your organization's Lead Configuration.
-- Any mandatory business information is available.
-
-:::note
-The fields displayed in the Lead Creation form depend on your organization's **Lead Configuration** settings. Custom fields and validation rules may vary across organizations.
-:::
-
----
-
 ### Accessing the Lead Creation Form
 
 To create a new Lead:
@@ -47,15 +33,13 @@ To create a new Lead:
 
 The Lead Creation form opens.
 
-![Lead Creation Form](/img/leads/LeadCreation.png)
+![Lead Creation Form](/img/leads/CreateLead.png)
 
 ---
+:::note
+The Lead Creation form shown above is the default form, containing the standard fields provided by the system. You can customize the form by adding, removing, or modifying fields through  **[Custom-Fields](/docs/Configure/Custom-Fields)**  to align with your organization's specific requirements and lead capture process.
+:::
 
-### Enter Lead Information
-
-The Lead Creation form displays the fields configured by your CRM administrator.
-
-Depending on your organization's configuration, the form may contain the following sections.
 
 | Section | Description |
 |----------|-------------|
@@ -81,19 +65,6 @@ While entering Lead information, keep the following in mind:
 :::tip
 Complete as much information as possible while creating a Lead to improve qualification accuracy and future reporting.
 :::
-
----
-
-### Additional Information
-
-Depending on your organization's configuration, you may also be able to:
-
-- Upload files or images.
-- Add notes or descriptions.
-- Apply Tags.
-- Assign a Lead Owner.
-- Select the Lead Status.
-- Capture organization-specific information using custom fields.
 
 ---
 
@@ -129,19 +100,6 @@ The representative creates a Lead with the following information:
 | Status | New |
 
 After saving, the Lead becomes available for qualification and follow-up.
-
----
-
-### Important Notes
-
-:::note
-
-- The Lead Creation form is dynamically generated based on administrator configuration.
-- Custom fields are automatically displayed when configured.
-- Field validations are enforced according to organizational policies.
-- Changes made in **Lead Configuration** are immediately reflected in the Lead Creation form.
-
-:::
 
 ---
 

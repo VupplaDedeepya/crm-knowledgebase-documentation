@@ -1,6 +1,9 @@
 ---
 title: Configure Your CRM
 sidebar_position: 5
+displayed_sidebar: null
+pagination_prev: null
+pagination_next: null
 ---
 
 # Configure Your CRM

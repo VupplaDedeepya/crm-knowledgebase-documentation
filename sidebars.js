@@ -1,27 +1,29 @@
 const sidebars = {
   tutorialSidebar: [
-    'intro',
     {
       type: 'category',
       label: 'CRM Modules',
       items: [
-        'leads-module',
-        'deal-module',
+        'Leads-Module/overview',
+        'Deals-Module/overview',
       ],
     },
   ],
 
   onboardingSidebar: [
-    'onboarding',
-    'navigation',
-    'FirstCRMSetup',
     'profile-settings',
-    'crm-essentials',
-    'pulse',
-    'automation',
-    'integrations',
-    'administration',
-    'developer',
+  ],
+  dashboardSidebar: [
+    {
+      type: 'category',
+      label: 'Dashboard',
+      items: [
+        'Dashboard/overview',
+        'Dashboard/sales-representative-dashboard',
+        'Dashboard/leadership-dashboard',
+        'Dashboard/manager-dashboard',
+      ],
+    },
   ],
   leadModuleSidebar: [
     {
@@ -30,9 +32,9 @@ const sidebars = {
       items: [
         'Leads-Module/overview',
         'Leads-Module/creating-leads',
-        'Leads-Module/bulk-actions',
         'Leads-Module/custom-views',
         'Leads-Module/search-and-filters',
+        'Leads-Module/bulk-actions',
         {
           type: 'category',
           label: 'Lead Activities',
@@ -147,6 +149,30 @@ const sidebars = {
       label: 'Pulse Inbox',
       items: [
         'Pulse-Module/Pulse-Overview',
+      ],
+    },
+  ],
+  reportsSidebar: [
+    {
+      type: 'category',
+      label: 'Reports',
+      items: [
+        'Reports/overview',
+        'Reports/leads-reports',
+        'Reports/deals-reports',
+        'Reports/activities-reports',
+        'Reports/organizations&contacts-reports',
+        'Reports/pulse-reports',
+        'Reports/sales-performance-reports',
+      ],
+    },
+  ],
+  supportSidebar: [
+    {
+      type: 'category',
+      label: 'Support',
+      items: [
+        'Support/overview',
       ],
     },
   ],

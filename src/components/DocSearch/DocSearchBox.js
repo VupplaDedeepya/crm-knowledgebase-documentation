@@ -283,8 +283,8 @@ export default function DocSearchBox({
           onKeyDown={onKeyDown}
           onClear={onClear}
           placeholder={placeholder}
-          iconSize={variant === 'navbar' ? 18 : 20}
-          clearSize={variant === 'navbar' ? 16 : 18}
+          iconSize={variant === 'navbar' ? 16 : 20}
+          clearSize={variant === 'navbar' ? 14 : 18}
           inputRef={inputRef}
           expanded={dropdownOpen}
           listboxId={listboxId}

@@ -1,96 +1,37 @@
 import React from 'react';
+import {createPortal} from 'react-dom';
 import clsx from 'clsx';
-import {
-  useThemeConfig,
-  ErrorCauseBoundary,
-  ThemeClassNames,
-} from '@docusaurus/theme-common';
-import {
-  splitNavbarItems,
-  useNavbarMobileSidebar,
-} from '@docusaurus/theme-common/internal';
-import {useLocation} from '@docusaurus/router';
-import NavbarItem from '@theme/NavbarItem';
-import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
-import NavbarLogo from '@theme/Navbar/Logo';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import NavbarDocSearch from '@site/src/components/NavbarDocSearch';
-
-function useNavbarItems() {
-  return useThemeConfig().navbar.items;
-}
-
-function useIsHomePage() {
-  const {pathname} = useLocation();
-  const normalized = pathname.replace(/\/$/, '') || '/';
-  return normalized === '/' || normalized === '/index';
-}
-
-function NavbarItems({items}) {
-  return (
-    <>
-      {items.map((item, i) => (
-        <ErrorCauseBoundary
-          key={i}
-          onError={(error) =>
-            new Error(
-              `A theme navbar item failed to render.
-Please double-check the following navbar item (themeConfig.navbar.items) of your Docusaurus config:
-${JSON.stringify(item, null, 2)}`,
-              {cause: error},
-            )
-          }
-        >
-          <NavbarItem {...item} />
-        </ErrorCauseBoundary>
-      ))}
-    </>
-  );
-}
-
-function NavbarContentLayout({left, right}) {
-  return (
-    <div className="navbar__inner">
-      <div
-        className={clsx(
-          ThemeClassNames.layout.navbar.containerLeft,
-          'navbar__items',
-        )}
-      >
-        {left}
-      </div>
-      <div
-        className={clsx(
-          ThemeClassNames.layout.navbar.containerRight,
-          'navbar__items navbar__items--right',
-        )}
-      >
-        {right}
-      </div>
-    </div>
-  );
-}
+import GlobalNavSidebar from '@site/src/components/GlobalNavSidebar/GlobalNavSidebar';
+import styles from './styles.module.css';
 
 export default function NavbarContent() {
-  const mobileSidebar = useNavbarMobileSidebar();
-  const items = useNavbarItems();
-  const [leftItems, rightItems] = splitNavbarItems(items);
-  const isHomePage = useIsHomePage();
+  const {siteConfig} = useDocusaurusContext();
+  const title = siteConfig.title || 'CX Astra';
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <NavbarContentLayout
-      left={
-        <>
-          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
-          <NavbarLogo />
-          <NavbarItems items={leftItems} />
-        </>
-      }
-      right={
-        <>
-          {!isHomePage ? <NavbarDocSearch /> : null}
-          <NavbarItems items={rightItems} />
-        </>
-      }
-    />
+    <>
+      {mounted ? createPortal(<GlobalNavSidebar />, document.body) : null}
+      <div className={clsx('navbar__inner', styles.inner)}>
+        <div className={clsx('navbar__items', styles.left)}>
+          <Link to="/" className={styles.brand} aria-label={`${title} home`}>
+            <span className={styles.logoTitle}>{title}</span>
+          </Link>
+        </div>
+
+        <div className={clsx('navbar__items', styles.center)}>
+          <div className={styles.searchWrap}>
+            <NavbarDocSearch />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

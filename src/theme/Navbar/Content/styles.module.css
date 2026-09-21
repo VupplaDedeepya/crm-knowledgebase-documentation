@@ -1,1 +1,62 @@
-/* Color mode toggle removed from navbar */
+.inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding-left: 0.15rem;
+}
+
+.left {
+  display: flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  min-width: 0;
+  margin-left: 0;
+}
+
+.center {
+  flex: 1 1 auto;
+  display: flex !important;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  margin-left: 0;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.brand:hover {
+  text-decoration: none !important;
+}
+
+.logoTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.searchWrap {
+  width: min(560px, 100%);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    gap: 0.65rem;
+  }
+
+  .logoTitle {
+    font-size: 1.2rem;
+  }
+
+  .searchWrap {
+    width: 100%;
+  }
+}

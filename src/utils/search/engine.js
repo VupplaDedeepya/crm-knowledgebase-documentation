@@ -59,10 +59,10 @@ function inferModuleCategory(doc) {
     return {module: doc.module, category: doc.category};
   }
   const path = doc.to || doc.path || '';
-  if (path.includes('/Leads-Module') || path.includes('/leads-module')) {
+  if (path.includes('/Leads-Module')) {
     return {module: 'CRM Essentials', category: 'Leads'};
   }
-  if (path.includes('/Deals-Module') || path.includes('/deal-module')) {
+  if (path.includes('/Deals-Module')) {
     return {module: 'CRM Essentials', category: 'Deals'};
   }
   if (path.includes('/Contacts-Module')) {

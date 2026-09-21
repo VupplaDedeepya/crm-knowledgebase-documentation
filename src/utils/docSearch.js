@@ -35,7 +35,7 @@ export const DOC_INDEX = [
   },
   {
     label: 'Leads Module Intro',
-    to: '/docs/leads-module',
+    to: '/docs/Leads-Module/overview',
     kind: 'definition',
     entities: ['lead', 'leads'],
     actions: ['intro', 'introduction'],
@@ -43,7 +43,7 @@ export const DOC_INDEX = [
   },
   {
     label: 'Deals Module Intro',
-    to: '/docs/deal-module',
+    to: '/docs/Deals-Module/overview',
     kind: 'definition',
     entities: ['deal', 'deals'],
     actions: ['intro', 'introduction'],
