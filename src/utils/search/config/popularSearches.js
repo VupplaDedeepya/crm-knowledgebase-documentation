@@ -7,5 +7,5 @@ export const POPULAR_SEARCHES = [
   {label: 'Knowledge Base', to: '/docs/Pulse-Settings/KnowledgeBase'},
   {label: 'Roles', to: '/docs/user-management/roles'},
   {label: 'Business Hours', to: '/docs/Pulse-Settings/SupportAvailability'},
-  {label: 'Deal Pipelines', to: '/docs/Configure/Deals'},
+  {label: 'Deal Pipelines', to: '/docs/Configure/pipeline'},
 ];

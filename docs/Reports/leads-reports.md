@@ -28,6 +28,8 @@ The following standard reports are available:
 
 The **Lead Summary** report provides an overview of Leads and their current lifecycle status.
 
+![lead-summary](/img/reports/LeadSummary.png)
+
 It can display metrics such as:
 
 - Total Leads
@@ -45,6 +47,8 @@ The report provides both a visual representation and detailed Lead data.
 
 The **Lead Source Performance** report helps users analyze Leads based on their source.
 
+![Source-performance](/img/reports/SourcePerformance.png)
+
 It can display:
 
 - Lead Source
@@ -60,6 +64,8 @@ This report helps users compare the performance of different Lead sources.
 ## Lead Status Report
 
 The **Lead Status Report** provides a breakdown of Leads based on their current status.
+
+![status-performance](/img/reports/StatusPerformance.png)
 
 For example:
 
@@ -87,11 +93,15 @@ It can display:
 
 This allows managers to monitor Lead handling and conversion activity across owners.
 
+![lead-owner-report](/img/reports/LeadOwnerReport.png)
+
 ---
 
 ## Lead Conversion Report
 
 The **Lead Conversion Report** provides insights into Lead conversion performance.
+
+![conversion-report](/img/reports/conversionReport.png)
 
 It can display:
 
@@ -107,6 +117,8 @@ The report helps users understand how effectively Leads are progressing to conve
 ## Lead Aging Report
 
 The **Lead Aging Report** groups Leads based on how long they have remained in the system.
+
+![lead-aging-report](/img/reports/LeadAgingReport.png)
 
 Common age groups include:
 

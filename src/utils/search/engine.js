@@ -138,7 +138,7 @@ function inferDescription(doc) {
 function inferIconKey(doc) {
   const path = doc.to || doc.path || '';
   if (path.includes('Lead')) return 'leads';
-  if (path.includes('Deal') || path.includes('Configure/Deals')) return 'deals';
+  if (path.includes('Deal') || path.includes('Configure/pipeline') || path.includes('Configure/deal-')) return 'deals';
   if (path.includes('Contact')) return 'contacts';
   if (path.includes('Organization')) return 'organizations';
   if (path.includes('Activit')) return 'activities';

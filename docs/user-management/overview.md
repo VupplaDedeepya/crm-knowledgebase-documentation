@@ -45,6 +45,7 @@ The User Management module helps organizations:
 1. Users  
 2. Roles
 3. Access 
+4. Security
 
 Let's explore each of them in detail.
 

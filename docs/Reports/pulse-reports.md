@@ -26,6 +26,8 @@ The **Channel Performance Report** provides an overview of customer conversation
 
 It helps users compare conversation volumes, lead generation, response times, resolution times, and completion rates across channels such as Website Chatbot and WhatsApp.
 
+![ChannelPerformance](/img/reports/ChannelPerformance.png)
+
 ### Report Filters
 
 The report provides:

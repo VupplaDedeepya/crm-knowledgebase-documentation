@@ -31,6 +31,8 @@ The following standard reports are available:
 
 The **Pipeline Report** provides an overview of the organization's active sales pipeline.
 
+![pipeline-report](/img/reports/PipelineReport.png)
+
 The report overview displays key metrics such as:
 
 - **Total Open Deals** – Number of currently open Deals.
@@ -61,6 +63,8 @@ Users can sort the available columns and select a Deal to open its details.
 The **Deals by Stage Report** provides a stage-wise view of the sales pipeline.
 
 The report displays the number and value of Deals associated with each configured Deal stage.
+
+![Deal-by-stage-report](/img/reports/DealByStage.png)
 
 The report overview includes:
 
@@ -94,6 +98,8 @@ This report helps users understand the volume and value of Deals at each stage.
 ## 3. Won Deals Report
 
 The **Won Deals Report** provides details of Deals that have been successfully won.
+
+![won-deals-report](/img/reports/WonDeals.png)
 
 The report overview displays metrics such as:
 
@@ -147,6 +153,8 @@ If a Lost Reason has not been specified for a Deal, the report may display the v
 
 The **Deal Win Rate Report** provides an overview of won and lost Deal performance.
 
+![deal-win-rate](/img/reports/DealWinPercentage.png)
+
 The report overview displays:
 
 - **Total Deals**
@@ -174,6 +182,8 @@ The report helps users analyze the proportion of Deals that were won or lost wit
 ## 6. Deal Forecast Report
 
 The **Deal Forecast Report** provides an estimate of expected revenue from Deals based on the organization's configured forecasting methodology.
+
+![deal-forecast](/img/reports/DealForecast.png)
 
 The report overview displays:
 
@@ -206,6 +216,8 @@ The report provides a period-wise view of expected pipeline and forecasted reven
 
 The **Revenue Report** provides an overview of revenue generated from successfully won Deals.
 
+![revenue-report](/img/reports/RevenueReport.png)
+
 The report overview displays:
 
 - **Total Revenue**
@@ -229,6 +241,8 @@ The report can be viewed across different periods, such as monthly, quarterly, o
 ## 8. Stalled Deals Report
 
 The **Stalled Deals Report** identifies open Deals that have not changed stage within the configured period.
+
+![stalled-deals](/img/reports/StalledDeals.png)
 
 The report overview displays:
 

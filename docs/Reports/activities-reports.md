@@ -27,6 +27,8 @@ The following standard reports are available:
 
 The **Activity Summary Report** provides an overall view of activities recorded within the selected reporting period.
 
+![activity-summary](/img/reports/ActivitySummary.png)
+
 The report overview displays key metrics such as:
 
 - **Total Activities**
@@ -59,6 +61,8 @@ Users can sort the report columns to analyze activity performance.
 ## 2. Tasks Report
 
 The **Tasks Report** provides details of tasks assigned to users and their current execution status.
+
+![task-report](/img/reports/TasksReport.png)
 
 The report overview displays:
 
@@ -94,6 +98,8 @@ Users can use this report to monitor assigned tasks, review their status, and id
 
 The **Meetings & Calls Report** provides an overview of meetings and calls scheduled or completed during the selected reporting period.
 
+![meetings-report](/img/reports/MeetingsReport.png)
+
 The report overview displays:
 
 - **Total Meetings**
@@ -123,6 +129,8 @@ For example, the report may display meetings associated with a Lead and a Deal s
 ## 4. Overdue Activities Report
 
 The **Overdue Activities Report** identifies activities that have passed their due date and remain incomplete.
+
+![overdue-report](/img/reports/OverdueReport.png)
 
 The report overview displays:
 

@@ -35,6 +35,7 @@ The Organization Settings module contains the following sections:
 - Localization
 - Work Schedule
 - Branding
+- Target Management
 
 ---
 

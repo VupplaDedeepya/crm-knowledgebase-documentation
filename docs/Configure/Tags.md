@@ -1,6 +1,6 @@
 ---
 title: Tags
-sidebar_position: 4
+sidebar_position: 12
 ---
 # Tags Management
 
@@ -71,7 +71,7 @@ Once created, the tag becomes available for users within the selected modules.
 
 ---
 
-![Tags](/img/Configure/Tags.png)
+![Tags](/img/Configure/CreateTag.png)
 
 ## Tag Information
 
@@ -114,7 +114,6 @@ Administrators can specify where a tag can be used.
 | Contacts | Classify customers and stakeholder records |
 | Organizations | Segment companies and accounts |
 | Deals | Group sales opportunities |
-| Knowledge Base | Organize articles and documentation |
 
 :::note
 A tag can be assigned to one or multiple modules.
@@ -213,26 +212,6 @@ Tags help organize opportunities throughout the sales pipeline.
 - Pipeline segmentation
 - Revenue forecasting
 - Opportunity prioritization
-
----
-
-### Knowledge Base
-
-Tags help organize and categorize documentation.
-
-#### Examples
-
-- Product Documentation
-- FAQ
-- Troubleshooting
-- Training
-- Onboarding
-
-#### Common Uses
-
-- Article categorization
-- Improved search experience
-- Content organization
 
 ---
 

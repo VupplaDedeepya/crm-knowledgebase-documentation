@@ -57,7 +57,7 @@ export const GUIDE_CATEGORIES = [
       {label: 'Users', to: '/docs/user-management/users'},
       {label: 'Roles', to: '/docs/user-management/roles'},
       {label: 'Organization Profile', to: '/docs/Organization/Profile'},
-      {label: 'Deal Pipelines', to: '/docs/Configure/Deals'},
+      {label: 'Deal Pipelines', to: '/docs/Configure/pipeline'},
     ],
   },
   {

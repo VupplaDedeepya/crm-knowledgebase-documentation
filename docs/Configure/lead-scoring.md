@@ -1,8 +1,10 @@
 ---
-title: Leads
+title: Lead Scoring
 sidebar_position: 2
+description: Learn how to configure Lead Scoring using Manual Scoring, AI Scoring, and score weightage in CX Astra CRM.
 ---
-## Lead Scoring
+
+# Lead Scoring
 
 Lead Scoring helps organizations identify and prioritize high-quality leads by assigning a score based on predefined business rules and AI-driven insights.
 
@@ -21,6 +23,7 @@ The Lead Scoring page contains the following sections:
 - Recalculation Triggers
 
 ---
+
 ![lead scoring](/img/Configure/leadScoring.png)
 
 ## 1. Scoring Model

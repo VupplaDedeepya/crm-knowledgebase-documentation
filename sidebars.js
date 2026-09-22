@@ -189,6 +189,7 @@ const sidebars = {
             'Organization/Localization',
             'Organization/WorkSchedule',
             'Organization/Branding',
+            'Organization/target-management',
           ],
         },
         {
@@ -199,6 +200,7 @@ const sidebars = {
             'user-management/users',
             'user-management/roles',
             'user-management/Access',
+            'user-management/security',
           ],
         },
         {
@@ -206,14 +208,22 @@ const sidebars = {
           label: 'Configure',
           items: [
             'Configure/Custom-Fields',
-            'Configure/Leads',
-            'Configure/Deals',
+            'Configure/lead-scoring',
+            'Configure/lead-import',
+            'Configure/pipeline',
+            'Configure/deal-settings',
+            'Configure/deal-scoring',
+            'Configure/deal-import',
+            'Configure/contact-import',
+            'Configure/organization-import',
+            'Configure/activities-import',
+            'Configure/catalog',
             'Configure/Tags',
           ],
         },
         {
           type: 'category',
-          label: 'Integrations',
+          label: 'Forms',
           items: [
             'Integrations/Lead-Capture',
           ],
@@ -238,6 +248,15 @@ const sidebars = {
             'Pulse-Settings/KnowledgeBase',
             'Pulse-Settings/SupportAvailability',
             'Pulse-Settings/GlobalSettings',
+            'Pulse-Settings/PulseTags',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Call Settings',
+          items: [
+            'Call-Settings/providers',
+            'Call-Settings/call-logs',
           ],
         },
         {

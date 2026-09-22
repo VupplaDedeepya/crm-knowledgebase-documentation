@@ -145,13 +145,13 @@ Configure Lead Scoring to define how Lead Scores are calculated using:
 - AI Scoring
 - Blended Scoring
 
-👉 **[Learn more about Lead Scoring →](/docs/Configure/Leads)**
+👉 **[Learn more about Lead Scoring →](/docs/Configure/lead-scoring)**
 
 ---
 
 ### Deals
 
-Configure Deal Pipelines and Deal Settings to define your organization's sales process.
+Configure Deal Pipelines, Deal Settings, Deal Scoring, and Deal Import to define your organization's sales process.
 
 Administrators can:
 
@@ -167,10 +167,12 @@ Deal Settings allow administrators to configure:
 - Buyer Type Behavior
 - Deal Origin
 
-👉 **[Learn more about Deal Configuration →](/docs/Configure/Deals)**
-
 Related configuration:
 
+- [Pipeline](/docs/Configure/pipeline)
+- [Deal Settings](/docs/Configure/deal-settings)
+- [Deal Scoring](/docs/Configure/deal-scoring)
+- [Deal Import](/docs/Configure/deal-import)
 - [Custom Fields](/docs/Configure/Custom-Fields)
 - [Tags](/docs/Configure/Tags)
 

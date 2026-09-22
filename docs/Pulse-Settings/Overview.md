@@ -103,6 +103,26 @@ Create and manage articles, FAQs, and information sources that can be used by bo
 
 ---
 
+### Pulse Tags
+
+Create and manage reusable labels that agents can apply to Pulse conversations for categorization, filtering, and reporting.
+
+#### Capabilities
+
+- Create and edit conversation tags
+- Activate or deactivate tags
+- Apply tags to customer conversations
+- Segment conversations for reporting and inbox filtering
+
+#### Purpose
+
+- Categorize support conversations consistently
+- Improve conversation searchability
+- Support reporting on inquiry types and themes
+- Help agents organize and prioritize chats
+
+---
+
 ### Support Availability
 
 Set business hours, agent availability schedules, holidays, and support operating times to manage customer expectations.

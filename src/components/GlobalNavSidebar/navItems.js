@@ -99,6 +99,7 @@ export const GLOBAL_NAV_GROUPS = [
           '/docs/user-management',
           '/docs/Configure',
           '/docs/Pulse-Settings',
+          '/docs/Call-Settings',
           '/docs/Integrations',
           '/docs/Automation',
         ],

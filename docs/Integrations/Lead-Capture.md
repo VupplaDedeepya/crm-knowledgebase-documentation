@@ -1,18 +1,18 @@
 ---
-title: Lead-Capture
+title: Lead-Forms
 sidebar_position: 1
 ---
-# Integrations
+# Forms
 
 ## Overview
 
-The **Integrations** section allows administrators to connect external systems and data sources with SalesAstra. These integrations help automate data collection, streamline workflows, and ensure that lead information enters the CRM without manual effort.
+The **Forms** section allows administrators to connect external systems and data sources with SalesAstra. These integrations help automate data collection, streamline workflows, and ensure that lead information enters the CRM without manual effort.
 
-## Lead Capture
+## Lead Forms
 
 ### Overview
 
-Lead Capture enables organizations to automatically collect lead information from external websites, landing pages, and web forms directly into SalesAstra CRM.
+Lead Form enables organizations to automatically collect lead information from external websites, landing pages, and web forms directly into SalesAstra CRM.
 
 Instead of manually entering lead details, administrators can configure a lead capture form, map website form fields to CRM fields, and generate an embed code that can be added to their website.
 
@@ -32,16 +32,16 @@ When a visitor submits a form on the website, the embedded script captures the c
 
 ---
 
-## Accessing Lead Capture
+## Accessing Lead Forms
 
 1. Navigate to **Settings**.
-2. Expand **Integrations**.
-3. Select **Lead Capture**.
+2. Expand **Forms**.
+3. Select **Lead Forms**.
 4. Click **Create New Configuration** to create a new lead capture setup.
 
 ---
 
-## Creating a Lead Capture Configuration
+## Creating a Lead Form Configuration
 
 A Lead Capture Configuration defines how data from an external website form will be mapped and submitted to SalesAstra CRM.
 
@@ -143,9 +143,9 @@ The embed code should be added only to trusted websites owned and managed by you
 
 ---
 
-## How Lead Capture Works
+## How Lead Form Works
 
-The lead capture process follows the workflow below:
+The lead Form process follows the workflow below:
 
 1. A visitor fills out a website form.
 2. The embedded SalesAstra script detects the form submission.

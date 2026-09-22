@@ -24,6 +24,8 @@ The Cases page displays the available support cases and provides options to sear
 
 The case listing displays the following information:
 
+![ticket-listing](/img/support/ticketListing.png)
+
 | Field | Description |
 |---|---|
 | **Case** | Unique Case/Ticket number assigned to the support request. |
@@ -89,6 +91,8 @@ Users can create a new support case using the **New Case** button.
 5. Add supporting attachments, if required.
 6. Review the entered information.
 7. Click **Create Ticket**.
+
+![create-ticket](/img/support/createTicket.png)
 
 After successful creation, SalesAstra generates a unique case number for the request.
 
