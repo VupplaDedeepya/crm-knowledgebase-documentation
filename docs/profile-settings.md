@@ -547,7 +547,7 @@ To configure the navigation behavior:
 1. Go to **Profile Settings**.
 2. Select **Navigation Preferences**.
 
-![navigation-preferences](/img/Profile/NavigationPreferences.png)
+![navigation-preferences](/img/profile/NavigationPreferences.png)
 
 3. Under **Record Navigation**, select the preferred option:
    - **Open records in a separate tab**

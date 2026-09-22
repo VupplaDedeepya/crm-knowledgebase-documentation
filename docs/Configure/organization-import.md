@@ -26,7 +26,7 @@ To import Organizations:
 2. Select **Organizations**.
 3. Open the **Import** tab.
 
-![Organizations-Import](/img/COnfigure/OrganizationsImport.png)
+![Organizations-Import](/img/Configure/OrganizationsImport.png)
 
 4. Upload a CSV or Excel file containing the Organization data.
 5. Map the columns in your file to the corresponding Organization fields.
