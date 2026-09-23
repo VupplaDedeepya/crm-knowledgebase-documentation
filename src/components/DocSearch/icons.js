@@ -8,16 +8,15 @@ import {
   MessageSquare,
   Puzzle,
   Settings,
-  UserPlus,
-  Users,
   Zap,
 } from 'lucide-react';
+import {LeadsIcon, ContactsIcon} from '../icons';
 
 const ICONS = {
   docs: FileText,
-  leads: UserPlus,
+  leads: LeadsIcon,
   deals: Handshake,
-  contacts: Users,
+  contacts: ContactsIcon,
   organizations: Building2,
   activities: LayoutGrid,
   calendar: Calendar,

@@ -7,7 +7,6 @@ import {
   MessageSquare,
   Puzzle,
   Settings,
-  UserPlus,
   Users,
   Zap,
   Bot,
@@ -21,6 +20,7 @@ import {
   Target,
   Shield,
 } from 'lucide-react';
+import {LeadsIcon, ContactsIcon} from '../icons';
 
 const RELATED = {
   crm: {title: 'CRM Essentials', description: 'Leads, deals, contacts, and daily CRM work.', to: '/docs/crm-essentials', tone: 'violet'},
@@ -44,7 +44,7 @@ export const CATEGORY_PAGES = {
         title: 'Leads',
         description: 'Capture, qualify, and convert sales prospects.',
         to: '/docs/Leads-Module/overview',
-        Icon: UserPlus,
+        Icon: LeadsIcon,
         tone: 'violet',
       },
       {
@@ -58,7 +58,7 @@ export const CATEGORY_PAGES = {
         title: 'Contacts',
         description: 'Manage people and customer relationships.',
         to: '/docs/Contacts-Module/overview',
-        Icon: Users,
+        Icon: ContactsIcon,
         tone: 'blue',
       },
       {

@@ -1,7 +1,7 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import {useHistory} from '@docusaurus/router';
+import { useHistory } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -32,11 +32,11 @@ import HeroRightLottie from '@site/src/components/HeroRightLottie';
 import styles from './index.module.css';
 
 const popularSearches = [
-  {label: 'Create a Lead', to: '/docs/Leads-Module/creating-leads'},
-  {label: 'Workflow Automation', to: '/docs/Automation/Workflows/Overview'},
-  {label: 'User Roles', to: '/docs/user-management/roles'},
-  {label: 'Pulse Settings', to: '/docs/Pulse-Settings/Overview'},
-  {label: 'Organization Settings', to: '/docs/Organization/Profile'},
+  { label: 'Create a Lead', to: '/docs/Leads-Module/creating-leads' },
+  { label: 'Workflow Automation', to: '/docs/Automation/Workflows/Overview' },
+  { label: 'User Roles', to: '/docs/user-management/roles' },
+  { label: 'Pulse Settings', to: '/docs/Pulse-Settings/Overview' },
+  { label: 'Organization Settings', to: '/docs/Organization/Profile' },
 ];
 
 const gettingStarted = [
@@ -122,12 +122,12 @@ const exploreAreas = [
 ];
 
 const popularGuides = [
-  {title: 'Creating Your First Lead', to: '/docs/Leads-Module/creating-leads'},
-  {title: 'Converting Lead to Deal', to: '/docs/Leads-Module/lead-conversion'},
-  {title: 'Managing Contacts', to: '/docs/Contacts-Module/overview'},
-  {title: 'Deal Pipeline Basics', to: '/docs/Deals-Module/overview'},
-  {title: 'Setting Up Workflows', to: '/docs/Automation/Workflows/Overview'},
-  {title: 'User Roles & Access', to: '/docs/user-management/roles'},
+  { title: 'Creating Your First Lead', to: '/docs/Leads-Module/creating-leads' },
+  { title: 'Converting Lead to Deal', to: '/docs/Leads-Module/lead-conversion' },
+  { title: 'Managing Contacts', to: '/docs/Contacts-Module/overview' },
+  { title: 'Deal Pipeline Basics', to: '/docs/Deals-Module/overview' },
+  { title: 'Setting Up Workflows', to: '/docs/Automation/Workflows/Overview' },
+  { title: 'User Roles & Access', to: '/docs/user-management/roles' },
 ];
 
 const whatsNew = [
@@ -255,7 +255,7 @@ function GettingStarted() {
         </Link>
       </div>
       <div className={styles.startGrid}>
-        {gettingStarted.map(({title, description, to, Icon, tone}) => (
+        {gettingStarted.map(({ title, description, to, Icon, tone }) => (
           <Link
             key={title}
             className={clsx(styles.startCard, styles[`tone_${tone}`])}
@@ -292,7 +292,7 @@ function ExploreByArea() {
         </div>
       </div>
       <div className={styles.areaGrid}>
-        {exploreAreas.map(({title, description, to, Icon, tone}) => (
+        {exploreAreas.map(({ title, description, to, Icon, tone }) => (
           <Link
             key={title}
             className={clsx(styles.areaCard, styles[`tone_${tone}`])}
@@ -370,7 +370,7 @@ function InfoColumns() {
             Need help?
           </Heading>
           <ul className={styles.helpList}>
-            {helpLinks.map(({title, description, to, Icon}) => (
+            {helpLinks.map(({ title, description, to, Icon }) => (
               <li key={title}>
                 <Link className={styles.helpItem} to={to}>
                   <span className={styles.helpIcon}>
@@ -393,16 +393,16 @@ function InfoColumns() {
 function HomeFooter() {
   return (
     <footer className={styles.homeFooter}>
-      <div className={styles.footerInner}>
+      <div className={`${styles.footerInner} items-end`}>
         <div className={styles.footerBrand}>
           <p className={styles.footerBrandName}>CX Astra</p>
           <p className={styles.footerBrandTag}>CRM Documentation Portal</p>
-          <p className={styles.footerCopy}>
+          {/* <p className={styles.footerCopy}>
             © {new Date().getFullYear()} My Project, Inc. Built with Docusaurus.
-          </p>
+          </p> */}
         </div>
 
-        <div className={styles.footerCol}>
+        {/* <div className={styles.footerCol}>
           <p className={styles.footerHeading}>Resources</p>
           <Link to="/docs/intro">Documentation</Link>
           <Link to="/docs/onboarding">Community</Link>
@@ -444,6 +444,12 @@ function HomeFooter() {
             />
             <button type="submit">Subscribe</button>
           </form>
+        </div> */}
+
+        <div className={styles.footerCol}>
+          <p className={`${styles.footerCopy} justify-end`}>
+            © {new Date().getFullYear()} My Project, Inc. Built with Docusaurus.
+          </p>
         </div>
       </div>
     </footer>
@@ -451,7 +457,7 @@ function HomeFooter() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-home', 'true');
@@ -471,9 +477,9 @@ export default function Home() {
         <div className={styles.content}>
           <GettingStarted />
           <ExploreByArea />
-          <InfoColumns />
+          {/* <InfoColumns /> */}
         </div>
-        <HomeFooter />
+        {/* <HomeFooter /> */}
       </main>
     </Layout>
   );

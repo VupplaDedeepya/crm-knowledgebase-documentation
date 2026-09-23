@@ -37,14 +37,19 @@
   justify-content: center;
   height: var(--ifm-navbar-height, 3.75rem);
   min-height: var(--ifm-navbar-height, 3.75rem);
-  padding: 0 0.35rem;
+  padding: 0 0.5rem;
   box-sizing: border-box;
+}
+
+.sidebarExpanded .header {
+  justify-content: flex-start;
+  padding: 0 0.85rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.65rem;
   min-width: 0;
   text-decoration: none !important;
   color: inherit;
@@ -56,10 +61,36 @@
 
 .brandLogo {
   display: block;
-  height: 2.75rem;
-  width: 2.75rem;
+  height: 2.35rem;
+  width: 2.35rem;
   flex-shrink: 0;
   object-fit: contain;
+}
+
+.brandTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1e293b;
+  white-space: nowrap;
+  line-height: 1.2;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sidebarExpanded .brandTitle {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
 }
 
 .nav {
@@ -71,7 +102,7 @@
   scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
 }
 
-.group + .group {
+.group+.group {
   margin-top: 1.25rem;
 }
 
@@ -215,10 +246,16 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.75rem 0.65rem 1rem;
+  justify-content: flex-end;
+  padding: 0.75rem 0.5rem 1rem;
   background: var(--nav-bg);
   box-sizing: border-box;
+}
+
+.sidebarCollapsed .footer {
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .toggleButton {
@@ -257,6 +294,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .sidebar,
   .groupLabel,
   .link,

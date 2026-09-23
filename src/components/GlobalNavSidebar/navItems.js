@@ -1,8 +1,6 @@
 import {
   LayoutDashboard,
-  UserPlus,
   Handshake,
-  Users,
   Building2,
   LayoutGrid,
   Calendar,
@@ -10,7 +8,9 @@ import {
   BarChart3,
   LifeBuoy,
   Settings,
+  UserCog,
 } from 'lucide-react';
+import {LeadsIcon, ContactsIcon} from '../icons';
 
 export const GLOBAL_NAV_GROUPS = [
   {
@@ -31,7 +31,7 @@ export const GLOBAL_NAV_GROUPS = [
         label: 'Leads',
         to: '/docs/Leads-Module/overview',
         match: ['/docs/Leads-Module'],
-        Icon: UserPlus,
+        Icon: LeadsIcon,
       },
       {
         label: 'Deals',
@@ -43,7 +43,7 @@ export const GLOBAL_NAV_GROUPS = [
         label: 'Contacts',
         to: '/docs/Contacts-Module/overview',
         match: ['/docs/Contacts-Module'],
-        Icon: Users,
+        Icon: ContactsIcon,
       },
       {
         label: 'Organizations',
@@ -104,6 +104,12 @@ export const GLOBAL_NAV_GROUPS = [
           '/docs/Automation',
         ],
         Icon: Settings,
+      },
+      {
+        label: 'Profile Settings',
+        to: '/docs/profile-settings',
+        match: ['/docs/profile-settings'],
+        Icon: UserCog,
       },
     ],
   },

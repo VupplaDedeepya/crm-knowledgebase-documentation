@@ -20,11 +20,6 @@ export default function NavbarContent() {
     <>
       {mounted ? createPortal(<GlobalNavSidebar />, document.body) : null}
       <div className={clsx('navbar__inner', styles.inner)}>
-        <div className={clsx('navbar__items', styles.left)}>
-          <Link to="/" className={styles.brand} aria-label={`${title} home`}>
-            <span className={styles.logoTitle}>{title}</span>
-          </Link>
-        </div>
 
         <div className={clsx('navbar__items', styles.center)}>
           <div className={styles.searchWrap}>

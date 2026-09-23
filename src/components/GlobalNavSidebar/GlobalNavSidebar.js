@@ -41,9 +41,10 @@ export default function GlobalNavSidebar() {
             src={logoSrc}
             alt=""
             className={styles.brandLogo}
-            width={44}
-            height={44}
+            width={38}
+            height={38}
           />
+          <span className={styles.brandTitle}>CX Astra</span>
         </Link>
       </div>
 

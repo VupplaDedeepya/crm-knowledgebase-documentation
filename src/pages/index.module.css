@@ -941,14 +941,14 @@
 .homeFooter {
   background: #0b1220;
   color: #cbd5e1;
-  padding: 3rem 1.5rem 2.5rem;
+  padding: 1rem 1.5rem 1rem;
 }
 
 .footerInner {
   max-width: 1480px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 0.85fr) 1.3fr;
+  grid-template-columns: 1.4fr repeat(1, 0.85fr);
   gap: 1.75rem;
 }
 
@@ -960,7 +960,8 @@
 }
 
 .footerBrandTag {
-  margin: 0.35rem 0 0.75rem;
+  /* margin: 0.35rem 0 0.75rem; */
+  margin: none;
   color: #94a3b8;
   font-size: 0.9rem;
 }
