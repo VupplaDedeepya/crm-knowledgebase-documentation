@@ -1104,6 +1104,21 @@ html[data-global-nav='collapsed'] {
   border-right: none !important;
   box-sizing: border-box !important;
   pointer-events: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+#cx-astra-global-nav::-webkit-scrollbar,
+#cx-astra-global-nav *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+#cx-astra-global-nav * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 .navbar {
