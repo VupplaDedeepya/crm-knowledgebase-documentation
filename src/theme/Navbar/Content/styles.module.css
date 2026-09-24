@@ -17,7 +17,8 @@
 .center {
   flex: 1 1 auto;
   display: flex !important;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
 }
 
@@ -45,6 +46,7 @@
 
 .searchWrap {
   width: min(560px, 100%);
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

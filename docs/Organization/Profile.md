@@ -2,7 +2,7 @@
 title: Profile
 sidebar_position: 1
 ---
-# Organization Settings
+## Organization Settings
 
 ## Overview
 
